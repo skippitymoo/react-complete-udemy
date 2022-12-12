@@ -39,7 +39,6 @@ const App = () => {
 
   const addExpenseHandler = (expense) => {
     setExpenses((prevState) => {
-      console.log('aaaaaaaaaa', [expense, ...prevState]);
       return [expense, ...prevState];
     });
   };
