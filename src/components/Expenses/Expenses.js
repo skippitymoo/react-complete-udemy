@@ -8,21 +8,17 @@ const Expenses = (props) => {
   const [currentfilter, setCurrentFilter] = useState({
     year: 2021,
   });
-  const filteredExpenses = (filter) => {
-    const filtered = props.expenses.filter(
-      (e) => e.date.getFullYear() === filter.year
-    );
-    return [...filtered];
-  };
-  const [items, setItems] = useState(filteredExpenses(currentfilter));
 
   const filterChangeHandler = (event) => {
     setCurrentFilter((prevState) => {
       prevState.year = +event.target.value;
-      setItems(filteredExpenses(prevState));
-      return prevState;
+      return { ...prevState };
     });
   };
+
+  const filteredExpenses = props.expenses.filter(
+    (e) => e.date.getFullYear() === currentfilter.year
+  );
 
   return (
     <Card className='expenses'>
@@ -30,7 +26,7 @@ const Expenses = (props) => {
         selected={currentfilter}
         onChangeFilter={filterChangeHandler}
       />
-      {items.map((exp) => {
+      {filteredExpenses.map((exp) => {
         return (
           <ExpenseItem
             title={exp.title}
