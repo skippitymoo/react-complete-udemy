@@ -38,6 +38,8 @@ const App = () => {
   const [expenses, setExpenses] = useState(expensesList);
 
   const addExpenseHandler = (expense) => {
+    console.log('FORM SUBMITTED - ', expense);
+
     setExpenses((prevState) => {
       return [expense, ...prevState];
     });
