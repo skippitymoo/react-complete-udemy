@@ -5,7 +5,8 @@ const NewExpense = (props) => {
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
-      id: Math.random().toString(),
+      id: enteredExpenseData.title,
+      visible: true,
     };
     props.onAddExpense(expenseData);
   };
