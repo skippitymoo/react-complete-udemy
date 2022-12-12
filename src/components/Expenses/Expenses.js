@@ -10,17 +10,21 @@ const Expenses = (props) => {
     year: 2021,
   });
 
-  const filterExpenses = (filter, expenses) => {
-    expenses.forEach((e) => {
-      e.visible = filter.year ? e.date.getFullYear() === filter.year : true;
+  const filterExpenses = (filter) => {
+    setExpenses((prevState) => {
+      prevState.forEach((e) => {
+        e.visible = filter.year ? e.date.getFullYear() === filter.year : true;
+      });
+      return [...prevState];
     });
-    setExpenses([...expenses]);
   };
 
   const filterChangeHandler = (event) => {
-    currentfilter.year = +event.target.value;
-    filterExpenses(currentfilter, expenses);
-    setCurrentFilter(currentfilter);
+    setCurrentFilter((prevState) => {
+      prevState.year = +event.target.value;
+      filterExpenses(prevState);
+      return prevState;
+    });
   };
 
   return (
@@ -29,7 +33,7 @@ const Expenses = (props) => {
         selected={currentfilter}
         onChangeFilter={filterChangeHandler}
       />
-      {props.expenses
+      {expenses
         .filter((exp) => exp.visible)
         .map((exp) => {
           return (
