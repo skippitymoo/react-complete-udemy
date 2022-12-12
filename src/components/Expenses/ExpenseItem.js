@@ -1,12 +1,15 @@
+import { useState } from 'react';
+
 import Card from '../UI/Card';
 import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css';
 
 const ExpenseItem = (props) => {
-  let title = props.title;
+  const [title, setTitle] = useState(props.title);
 
   const clickHandler = () => {
-    title = 'Updated!'; // this will change the variable value but the UI won't update
+    setTitle('Updated!');
+    console.log(title); // will show old value, because setTitle is scheduled and has not actioned yet
   };
 
   return (
