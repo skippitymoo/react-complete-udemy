@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import NewExpense from './components/NewExpense/NewExpense';
-import ExpensesFilter from './components/Expenses/ExpensesFilter';
+
 import Expenses from './components/Expenses/Expenses';
 
 const App = () => {
@@ -35,32 +35,15 @@ const App = () => {
     },
   ];
   const [expenses, setExpenses] = useState(expensesList);
-  const [currentfilter, setCurrentFilter] = useState({
-    year: null,
-  });
-
-  const filterExpenses = (filter, expenses) => {
-    expenses.forEach((e) => {
-      e.visible = filter.year ? e.date.getFullYear() === filter.year : true;
-    });
-    setExpenses([...expenses]);
-  };
 
   const addExpenseHandler = (expense) => {
     expenses.push(expense);
-    filterExpenses(currentfilter, expenses);
-  };
-
-  const filterChangeHandler = (event) => {
-    currentfilter.year = +event.target.value;
-    setCurrentFilter(currentfilter);
-    filterExpenses(currentfilter, expenses);
+    setExpenses([...expenses]);
   };
 
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <ExpensesFilter onFilterChange={filterChangeHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
