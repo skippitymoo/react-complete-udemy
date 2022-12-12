@@ -37,8 +37,10 @@ const App = () => {
   const [expenses, setExpenses] = useState(expensesList);
 
   const addExpenseHandler = (expense) => {
-    expenses.push(expense);
-    setExpenses([...expenses]);
+    setExpenses((prevState) => {
+      prevState.push(expense);
+      return [...prevState];
+    });
   };
 
   return (
