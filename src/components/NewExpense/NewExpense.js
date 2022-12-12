@@ -32,7 +32,9 @@ const NewExpense = (props) => {
         />
       )}
       {!showForm && (
-        <button onClick={addExpenseHandler}>Add New Expense</button>
+        <button type='button' onClick={addExpenseHandler}>
+          Add New Expense
+        </button>
       )}
     </div>
   );
