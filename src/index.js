@@ -1,8 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import './index.css';
-import App from './App';
+import "./components/UI/_form.scss";
+import "./components/UI/_button.scss";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import "./index.scss";
+import App from "./App";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);

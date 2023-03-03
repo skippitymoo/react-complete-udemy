@@ -1,0 +1,22 @@
+.btn {
+
+  &,
+  &:link,
+  &:visited {
+    font: inherit;
+
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 1rem;
+    transition: all 0.2s;
+  }
+
+  &:active {
+    outline: none;
+    box-shadow: 0 0.25rem 0.5rem rgba(#000, 0.4);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

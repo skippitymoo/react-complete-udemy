@@ -1,0 +1,26 @@
+.form {
+  &__label {
+    font-weight: 700;
+  }
+
+  &__input {
+    font: inherit;
+    color: inherit;
+
+    border: 1px solid rgba(#a0a0a0, 0.5);
+    padding: 0.1rem 0.5rem;
+    transition: all 0.3s;
+
+    &:active,
+    &:focus {
+      outline: none;
+      border-color: #540095;
+      box-shadow: 0 0.25rem 0.5rem rgba(#540095, 0.1);
+    }
+  }
+
+  &__button {
+    background-color: #540095;
+    color: #f9f7f6;
+  }
+}
