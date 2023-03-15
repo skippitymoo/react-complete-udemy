@@ -1,3 +1,7 @@
+:root {
+  --primary-colour: #690183;
+}
+
 *,
 *::before,
 *::after {
@@ -17,4 +21,5 @@ body {
   line-height: 1.6;
 
   background-color: #131313;
+  min-height: 100vh;
 }

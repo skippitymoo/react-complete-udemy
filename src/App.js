@@ -1,3 +1,4 @@
+import Popup from "./components/UI/Popup";
 import UserList from "./components/Users/UserList";
 import AddUser from "./components/Users/AddUser";
 import "./App.scss";
@@ -15,12 +16,15 @@ const users = [
 
 const App = () => {
   return (
-    <div className="main">
-      <div className="users">
-        <AddUser />
-        <UserList users={users} />
+    <>
+      <div className="main">
+        <div className="users">
+          <AddUser />
+          <UserList users={users} />
+        </div>
       </div>
-    </div>
+      <Popup />
+    </>
   );
 };
 

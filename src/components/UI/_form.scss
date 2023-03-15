@@ -14,13 +14,13 @@
     &:active,
     &:focus {
       outline: none;
-      border-color: #540095;
-      box-shadow: 0 0.25rem 0.5rem rgba(#540095, 0.1);
+      border-color: var(--primary-colour);
+      box-shadow: 0 0.25rem 0.5rem rgba(var(--primary-colour), 0.1);
     }
   }
 
   &__button {
-    background-color: #540095;
+    background-color: var(--primary-colour);
     color: #f9f7f6;
   }
 }

@@ -7,8 +7,11 @@
 
     border: none;
     cursor: pointer;
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 1.5rem;
     transition: all 0.2s;
+
+    background-color: var(--primary-colour);
+    color: #fff;
   }
 
   &:active {

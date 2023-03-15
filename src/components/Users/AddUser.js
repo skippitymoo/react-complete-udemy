@@ -1,10 +1,11 @@
 import "./AddUser.scss";
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-};
-
 const AddUser = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    window.location.hash = "popup";
+  };
+
   return (
     <div className="users__add">
       <form className="form user-form" onSubmit={handleSubmit}>
