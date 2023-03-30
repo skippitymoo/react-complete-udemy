@@ -1,14 +1,22 @@
 import "./AddUser.scss";
 
 const AddUser = () => {
-  const handleSubmit = (event) => {
+  const submitHandler = (event) => {
     event.preventDefault();
-    window.location.hash = "popup";
+
+    const data = new FormData(event.target);
+    const fieldsMissing = [...data.entries()].some((field) => !field[1]);
+
+    if (fieldsMissing) {
+      window.location.hash = "popup";
+    } else {
+      event.target.reset();
+    }
   };
 
   return (
-    <div className="users__add">
-      <form className="form user-form" onSubmit={handleSubmit}>
+    <div className="add-user">
+      <form className="form add-user__form" onSubmit={submitHandler}>
         <label className="form__label" htmlFor="username">
           Username
         </label>
@@ -22,7 +30,7 @@ const AddUser = () => {
           Age (Years)
         </label>
         <input className="form__input" type="number" name="age" id="age" />
-        <button className="btn form__button user-form__button">Add User</button>
+        <button className="btn form__button add-user__button">Add User</button>
       </form>
     </div>
   );
