@@ -11,13 +11,27 @@ const AddUser = (props) => {
 
     //const data = new FormData(event.target);
 
-    if (!usernameVal || !ageVal) {
-      window.location.hash = "popup";
-    } else {
-      props.onNewUser({ name: usernameVal, age: ageVal });
-      setUserName("");
-      setAge("");
+    if (!usernameVal) {
+      props.onPopUp({
+        header: "Invalid input",
+        text: "Please enter a valid age and name (non-empty values).",
+      });
+
+      return;
     }
+
+    if (!ageVal || ageVal < 1) {
+      props.onPopUp({
+        header: "Invalid input",
+        text: "Please enter a valid age (> 0).",
+      });
+
+      return;
+    }
+
+    props.onNewUser({ name: usernameVal, age: ageVal });
+    setUserName("");
+    setAge("");
 
     // const fieldsMissing = [...data.entries()].some((field) => !field[1]);
 
