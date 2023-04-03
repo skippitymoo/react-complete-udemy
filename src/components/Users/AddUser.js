@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../UI/Button";
 import styles from "./AddUser.module.scss";
 
-const AddUser = () => {
+const AddUser = (props) => {
   const [usernameVal, setUserName] = useState("");
   const [ageVal, setAge] = useState("");
 
@@ -14,6 +14,7 @@ const AddUser = () => {
     if (!usernameVal || !ageVal) {
       window.location.hash = "popup";
     } else {
+      props.onNewUser({ name: usernameVal, age: ageVal });
       setUserName("");
       setAge("");
     }
