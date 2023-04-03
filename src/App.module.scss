@@ -8,8 +8,6 @@
 
 .users {
   &>* {
-    background-color: #fff;
-
     &:not(:last-child) {
       margin-bottom: 3rem;
     }

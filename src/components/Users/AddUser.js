@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../UI/Button";
 import styles from "./AddUser.module.scss";
 
 const AddUser = () => {
@@ -27,7 +28,7 @@ const AddUser = () => {
   };
 
   return (
-    <div className={styles['add-user']}>
+    <div className={styles["add-user"]}>
       <form
         className={`form ${styles["add-user__form"]}`}
         onSubmit={submitHandler}
@@ -54,9 +55,12 @@ const AddUser = () => {
           value={ageVal}
           onChange={(e) => setAge(e.target.value)}
         />
-        <button className={`btn form__button ${styles["add-user__button"]}`}>
+        <Button
+          className={`form__button ${styles["add-user__button"]}`}
+          type="submit"
+        >
           Add User
-        </button>
+        </Button>
       </form>
     </div>
   );

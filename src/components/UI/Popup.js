@@ -1,3 +1,4 @@
+import Button from "./Button";
 import "./_popup.scss";
 
 const Popup = () => {
@@ -15,7 +16,7 @@ const Popup = () => {
           </p>
         </section>
         <footer className="popup__footer">
-          <button className="btn" onClick={handleClick}>Okay</button>
+          <Button onClick={handleClick}>Okay</Button>
         </footer>
       </div>
     </div>
