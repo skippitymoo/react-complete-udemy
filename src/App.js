@@ -1,7 +1,7 @@
 import Popup from "./components/UI/Popup";
 import UserList from "./components/Users/UserList";
 import AddUser from "./components/Users/AddUser";
-import "./App.scss";
+import styles from "./App.module.scss";
 
 const users = [
   {
@@ -17,8 +17,8 @@ const users = [
 const App = () => {
   return (
     <>
-      <div className="main">
-        <div className="users">
+      <div className={styles.main}>
+        <div className={styles.users}>
           <AddUser />
           <UserList users={users} />
         </div>

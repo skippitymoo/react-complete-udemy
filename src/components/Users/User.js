@@ -1,8 +1,8 @@
-import "./User.scss";
+import styles from "./User.module.scss";
 
 const User = (props) => {
   return (
-    <div className="user">
+    <div className={styles.user}>
       <span>
         {props.Name} ({props.Age} years old)
       </span>

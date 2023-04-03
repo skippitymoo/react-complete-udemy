@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./AddUser.scss";
+import styles from "./AddUser.module.scss";
 
 const AddUser = () => {
   const [usernameVal, setUserName] = useState("");
@@ -27,8 +27,11 @@ const AddUser = () => {
   };
 
   return (
-    <div className="add-user">
-      <form className="form add-user__form" onSubmit={submitHandler}>
+    <div className={styles['add-user']}>
+      <form
+        className={`form ${styles["add-user__form"]}`}
+        onSubmit={submitHandler}
+      >
         <label className="form__label" htmlFor="username">
           Username
         </label>
@@ -51,7 +54,9 @@ const AddUser = () => {
           value={ageVal}
           onChange={(e) => setAge(e.target.value)}
         />
-        <button className="btn form__button add-user__button">Add User</button>
+        <button className={`btn form__button ${styles["add-user__button"]}`}>
+          Add User
+        </button>
       </form>
     </div>
   );
