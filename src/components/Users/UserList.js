@@ -4,11 +4,13 @@ import styles from "./UserList.module.scss";
 
 const UserList = (props) => {
   return (
-    <div className={styles.users__list}>
+    <ul className={styles.users__list}>
       {props.users.map((u) => (
-        <User Name={u.name} Age={u.age} key={u.name} />
+        <li key={u.name}>
+          <User Name={u.name} Age={u.age} key={u.name} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

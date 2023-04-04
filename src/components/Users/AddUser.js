@@ -3,15 +3,15 @@ import Button from "../UI/Button";
 import styles from "./AddUser.module.scss";
 
 const AddUser = (props) => {
-  const [usernameVal, setUserName] = useState("");
-  const [ageVal, setAge] = useState("");
+  const [enteredUserName, setEnteredUserName] = useState("");
+  const [enteredAge, setEnteredAge] = useState("");
 
   const submitHandler = (event) => {
     event.preventDefault();
 
     //const data = new FormData(event.target);
 
-    if (!usernameVal) {
+    if (!enteredUserName || !enteredAge) {
       props.onPopUp({
         header: "Invalid input",
         text: "Please enter a valid age and name (non-empty values).",
@@ -20,7 +20,7 @@ const AddUser = (props) => {
       return;
     }
 
-    if (!ageVal || ageVal < 1) {
+    if (+enteredAge < 1) {
       props.onPopUp({
         header: "Invalid input",
         text: "Please enter a valid age (> 0).",
@@ -29,9 +29,9 @@ const AddUser = (props) => {
       return;
     }
 
-    props.onNewUser({ name: usernameVal, age: ageVal });
-    setUserName("");
-    setAge("");
+    props.onNewUser({ name: enteredUserName, age: enteredAge });
+    setEnteredUserName("");
+    setEnteredAge("");
 
     // const fieldsMissing = [...data.entries()].some((field) => !field[1]);
 
@@ -56,8 +56,8 @@ const AddUser = (props) => {
           type="text"
           name="username"
           id="username"
-          value={usernameVal}
-          onChange={(e) => setUserName(e.target.value)}
+          value={enteredUserName}
+          onChange={(e) => setEnteredUserName(e.target.value)}
         />
         <label className="form__label" htmlFor="age">
           Age (Years)
@@ -67,8 +67,8 @@ const AddUser = (props) => {
           type="number"
           name="age"
           id="age"
-          value={ageVal}
-          onChange={(e) => setAge(e.target.value)}
+          value={enteredAge}
+          onChange={(e) => setEnteredAge(e.target.value)}
         />
         <Button
           className={`form__button ${styles["add-user__button"]}`}

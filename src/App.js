@@ -22,13 +22,16 @@ const App = () => {
 
   const newUserHandler = (newUser) => {
     setUsers((prev) => [...prev, newUser]);
-    window.location.hash = "";
   };
 
   const [popupMessage, setPopUpMessage] = useState({});
-  const popupHandler = (message) => {
+  const popupMessageHandler = (message) => {
     setPopUpMessage(() => message);
     window.location.hash = "popup";
+  };
+
+  const popupCloseHandler = () => {
+    window.location.hash = "";
   };
 
   return (
@@ -36,14 +39,14 @@ const App = () => {
       <div className={styles.main}>
         <div className={styles.users}>
           <Card>
-            <AddUser onNewUser={newUserHandler} onPopUp={popupHandler} />
+            <AddUser onNewUser={newUserHandler} onPopUp={popupMessageHandler} />
           </Card>
           <Card>
             <UserList users={users} />
           </Card>
         </div>
       </div>
-      <Popup message={popupMessage} />
+      <Popup message={popupMessage} onConfirm={popupCloseHandler} />
     </>
   );
 };

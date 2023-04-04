@@ -2,10 +2,6 @@ import Button from "./Button";
 import "./_popup.scss";
 
 const Popup = (props) => {
-  const handleClick = () => {
-    window.location.hash = "";
-  };
-
   return (
     <div className="popup" id="popup">
       <div className="popup__container">
@@ -14,7 +10,7 @@ const Popup = (props) => {
           <p className="popup__text">{props.message.text}</p>
         </section>
         <footer className="popup__footer">
-          <Button onClick={handleClick}>Okay</Button>
+          <Button onClick={props.onConfirm}>Okay</Button>
         </footer>
       </div>
     </div>
