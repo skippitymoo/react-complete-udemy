@@ -1,7 +1,18 @@
+import { useEffect } from "react";
 import Button from "./Button";
 import "./_popup.scss";
 
 const Popup = (props) => {
+  const showMessageChangeHandler = () => {
+    if (props.message.show) {
+      window.location.hash = "popup";
+    } else {
+      window.location.hash = "";
+    }
+  };
+
+  useEffect(showMessageChangeHandler, [props.message.show]);
+
   return (
     <div className="popup" id="popup">
       <div className="popup__container">
