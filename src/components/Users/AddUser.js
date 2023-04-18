@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ReactDOM from "react-dom";
 import Button from "../UI/Button";
 import Popup from "../UI/Popup";
 import styles from "./AddUser.module.scss";
 
 const AddUser = (props) => {
-  const [enteredUserName, setEnteredUserName] = useState("");
-  const [enteredAge, setEnteredAge] = useState("");
+  const usernameRef = useRef("");
+  const ageRef = useRef("");
   const [popupMessage, setPopupMessage] = useState({
     header: "",
     text: "",
@@ -17,6 +17,8 @@ const AddUser = (props) => {
     event.preventDefault();
 
     //const data = new FormData(event.target);
+    const enteredUserName = usernameRef.current.value;
+    const enteredAge = ageRef.current.value;
 
     if (!enteredUserName || !enteredAge) {
       setPopupMessage({
@@ -39,8 +41,8 @@ const AddUser = (props) => {
     }
 
     props.onNewUser({ name: enteredUserName, age: enteredAge });
-    setEnteredUserName("");
-    setEnteredAge("");
+    usernameRef.current.value = "";
+    ageRef.current.value = "";
 
     // const fieldsMissing = [...data.entries()].some((field) => !field[1]);
 
@@ -74,8 +76,7 @@ const AddUser = (props) => {
             type="text"
             name="username"
             id="username"
-            value={enteredUserName}
-            onChange={(e) => setEnteredUserName(e.target.value)}
+            ref={usernameRef}
           />
           <label className="form__label" htmlFor="age">
             Age (Years)
@@ -85,8 +86,7 @@ const AddUser = (props) => {
             type="number"
             name="age"
             id="age"
-            value={enteredAge}
-            onChange={(e) => setEnteredAge(e.target.value)}
+            ref={ageRef}
           />
           <Button
             className={`form__button ${styles["add-user__button"]}`}
