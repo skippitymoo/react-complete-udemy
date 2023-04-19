@@ -1,42 +1,31 @@
-import UserList from "./components/Users/UserList";
-import AddUser from "./components/Users/AddUser";
-import Card from "./components/UI/Card";
+import React, { useState } from 'react';
 
-import styles from "./App.module.scss";
-import { useState } from "react";
+import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+import MainHeader from './components/MainHeader/MainHeader';
 
-const defaultUsers = [
-  {
-    name: "yoyo",
-    age: 123,
-  },
-  {
-    name: "bender",
-    age: 765,
-  },
-];
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-const App = () => {
-  const [users, setUsers] = useState(defaultUsers);
+  const loginHandler = (email, password) => {
+    // We should of course check email and password
+    // But it's just a dummy/ demo anyways
+    setIsLoggedIn(true);
+  };
 
-  const newUserHandler = (newUser) => {
-    setUsers((prev) => [...prev, newUser]);
+  const logoutHandler = () => {
+    setIsLoggedIn(false);
   };
 
   return (
-    <>
-      <div className={styles.main}>
-        <div className={styles.users}>
-          <Card>
-            <AddUser onNewUser={newUserHandler} />
-          </Card>
-          <Card>
-            <UserList users={users} />
-          </Card>
-        </div>
-      </div>
-    </>
+    <React.Fragment>
+      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+      <main>
+        {!isLoggedIn && <Login onLogin={loginHandler} />}
+        {isLoggedIn && <Home onLogout={logoutHandler} />}
+      </main>
+    </React.Fragment>
   );
-};
+}
 
 export default App;
