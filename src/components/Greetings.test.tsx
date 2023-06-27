@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Greetings from './Greetings';
 
@@ -26,7 +26,9 @@ describe('Greetings component', () => {
 
     const elementButton = screen.getByRole('button');
 
-    userEvent.click(elementButton);
+    await waitFor(() => {
+      userEvent.click(elementButton);
+    });
 
     elementChangedText = await screen.findByText('Changed!');
     const elementOriginalText = screen.queryByText("It's good to see you");
@@ -35,7 +37,9 @@ describe('Greetings component', () => {
     expect(elementOriginalText).toBeNull();
 
     // second click and text is still 'Changed!'
-    userEvent.click(elementButton);
+    await waitFor(() => {
+      userEvent.click(elementButton);
+    });
 
     elementChangedText = await screen.findByText('Changed!');
 

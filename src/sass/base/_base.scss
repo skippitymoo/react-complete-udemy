@@ -1,0 +1,46 @@
+@use '../abstracts/mixins';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 10px;
+      better practice to use percentage,
+      as user may have a font-size setting on their browser */
+
+  /* To get default of 10px, based on default browser setting of 16px => 10/16 = 62.5% */
+  // leaving this in _base.scss as it is to define what 1rem is
+  font-size: 62.5%;
+
+  @include mixins.respond(tab-land) {
+    font-size: 56.25%; // 1 rem = 9px, 9/16 = 56.25%
+  }
+
+  @include mixins.respond(tab-port) {
+    font-size: 50%; // 1 rem = 8px, 8/16 = 50%
+  }
+
+  @include mixins.respond(big-desktop) {
+    font-size: 75%; // 1 rem = 12px, 12/16 = 75%
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include mixins.respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+}
