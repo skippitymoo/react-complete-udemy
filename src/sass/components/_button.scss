@@ -2,24 +2,45 @@
   &,
   &:link,
   &:visited {
+    display: inline-block;
     border-radius: 10rem;
     padding: 0.5rem 2.5rem;
     font: inherit;
     font-weight: 800;
+    transition: all 0.2s;
 
     // change for the <button> element
-    border: none;
     cursor: pointer;
+    border: solid 1px;
   }
 
-  &--primary {
+  &-primary {
     color: var(--colour-white);
     background-color: var(--colour-primary);
-    transition: all 0.2s;
+    border-color: var(--colour-primary);
 
     &:hover,
     &:active {
+      border-color: var(--colour-primary-dark);
       background-color: var(--colour-primary-dark);
     }
+  }
+
+  &-secondary {
+    color: var(--colour-primary);
+    background-color: transparent;
+    border-color: var(--colour-primary);
+
+    &:hover,
+    &:active {
+      color: var(--colour-white);
+      border-color: var(--colour-primary-dark);
+      background-color: var(--colour-primary-dark);
+    }
+  }
+
+  &--small {
+    border-radius: 5px;
+    padding: 0 1rem;
   }
 }

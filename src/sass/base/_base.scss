@@ -10,6 +10,7 @@
 }
 
 html {
+  box-sizing: border-box;
   /* font-size: 10px;
       better practice to use percentage,
       as user may have a font-size setting on their browser */
@@ -32,7 +33,6 @@ html {
 }
 
 body {
-  box-sizing: border-box;
   padding: 3rem;
 
   @include mixins.respond(tab-port) {
