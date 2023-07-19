@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, JSX } from 'react';
 
 export type Post = {
   id: string;
   text: string;
 };
 
-const Async = () => {
+const Async = (): JSX.Element => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {

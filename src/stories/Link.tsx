@@ -1,3 +1,5 @@
+import { JSX } from 'react';
+
 interface LinkProps {
   /**
    * Link contents
@@ -17,7 +19,7 @@ interface LinkProps {
   onClick?: () => void;
 }
 
-export const Link = ({ text, href = '#', target = '_self', ...props }: LinkProps) => {
+export const Link = ({ text, href = '#', target = '_self', ...props }: LinkProps): JSX.Element => {
   return (
     <a href={href} target={target} {...props}>
       {text}
