@@ -1,17 +1,23 @@
 import { render, screen } from '@testing-library/react';
-import { isInaccessible } from '@testing-library/dom';
+import { axe, toHaveNoViolations } from 'jest-axe';
 import { Button } from './Button';
 
+expect.extend(toHaveNoViolations);
+
 describe('Button', () => {
+  it('should pass axe', async () => {
+    const { container } = render(<Button>dummy</Button>);
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
   it('should render the text provided', () => {
     const label = 'yeooo !';
 
     render(<Button>{label}</Button>);
 
-    const renderedButton = screen.getByRole('button', { name: new RegExp(label, 'i') });
+    const renderedButton = screen.getByRole('button', { name: label });
 
     expect(renderedButton).toBeInTheDocument();
-    expect(isInaccessible(renderedButton)).toBe(false);
   });
 
   it('should render with the correct class name for primary button', () => {
@@ -19,7 +25,7 @@ describe('Button', () => {
 
     render(<Button>{label}</Button>);
 
-    const renderedButton = screen.getByRole('button', { name: new RegExp(label, 'i') });
+    const renderedButton = screen.getByRole('button', { name: label });
 
     expect(renderedButton).toHaveClass('btn btn-primary');
   });
@@ -29,7 +35,7 @@ describe('Button', () => {
 
     render(<Button variant='secondary'>{label}</Button>);
 
-    const renderedButton = screen.getByRole('button', { name: new RegExp(label, 'i') });
+    const renderedButton = screen.getByRole('button', { name: label });
 
     expect(renderedButton).toHaveClass('btn btn-secondary');
   });
@@ -39,7 +45,7 @@ describe('Button', () => {
 
     render(<Button size='normal'>{label}</Button>);
 
-    const renderedButton = screen.getByRole('button', { name: new RegExp(label, 'i') });
+    const renderedButton = screen.getByRole('button', { name: label });
 
     expect(renderedButton).toHaveClass('btn btn-primary');
   });
@@ -49,7 +55,7 @@ describe('Button', () => {
 
     render(<Button size='small'>{label}</Button>);
 
-    const renderedButton = screen.getByRole('button', { name: new RegExp(label, 'i') });
+    const renderedButton = screen.getByRole('button', { name: label });
 
     expect(renderedButton).toHaveClass('btn btn-primary btn--small');
   });
@@ -60,7 +66,7 @@ describe('Button', () => {
 
     render(<Button onClick={onClick}>{label}</Button>);
 
-    const renderedButton = screen.getByRole('button', { name: new RegExp(label, 'i') });
+    const renderedButton = screen.getByRole('button', { name: label });
     renderedButton.click();
 
     expect(onClick).toHaveBeenCalledTimes(1);

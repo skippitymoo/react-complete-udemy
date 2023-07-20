@@ -1,3 +1,5 @@
+import React, { JSX } from 'react';
+
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   /**
    * Which style variant to apply?
@@ -14,7 +16,7 @@ export const Button = ({
   variant = 'primary',
   size = 'normal',
   ...rest
-}: ButtonProps) => {
+}: ButtonProps): JSX.Element => {
   const sizeClass = size === 'small' ? 'btn--small' : '';
 
   return (
