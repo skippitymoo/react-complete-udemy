@@ -17,17 +17,36 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
+export const Light: Story = {
   args: {
-    variant: 'secondary',
+    variant: 'light',
+    children: 'Press me!',
+  },
+};
+
+export const Dark: Story = {
+  args: {
+    variant: 'dark',
     children: 'Press me!',
   },
 };
 
 export const Small: Story = {
   args: {
-    variant: 'secondary',
+    variant: 'light',
     size: 'small',
     children: <span>yeo!</span>,
+  },
+};
+
+export const Notification: Story = {
+  args: {
+    variant: 'dark',
+    children: (
+      <>
+        <span>Press me!</span>
+        <Button.Notification text='6' />
+      </>
+    ),
   },
 };

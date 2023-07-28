@@ -27,17 +27,27 @@ describe('Button', () => {
 
     const renderedButton = screen.getByRole('button', { name: label });
 
-    expect(renderedButton).toHaveClass('btn btn-primary');
+    expect(renderedButton).toHaveClass('btn btn--primary');
   });
 
-  it('should render with the correct class name for secondary button', () => {
+  it('should render with the correct class name for light button', () => {
     const label = 'yeooo !';
 
-    render(<Button variant='secondary'>{label}</Button>);
+    render(<Button variant='light'>{label}</Button>);
 
     const renderedButton = screen.getByRole('button', { name: label });
 
-    expect(renderedButton).toHaveClass('btn btn-secondary');
+    expect(renderedButton).toHaveClass('btn btn--light');
+  });
+
+  it('should render with the correct class name for dark button', () => {
+    const label = 'yeooo !';
+
+    render(<Button variant='dark'>{label}</Button>);
+
+    const renderedButton = screen.getByRole('button', { name: label });
+
+    expect(renderedButton).toHaveClass('btn btn--dark');
   });
 
   it('should render with the correct class name for normal button', () => {
@@ -47,7 +57,7 @@ describe('Button', () => {
 
     const renderedButton = screen.getByRole('button', { name: label });
 
-    expect(renderedButton).toHaveClass('btn btn-primary');
+    expect(renderedButton).toHaveClass('btn btn--primary');
   });
 
   it('should render with the correct class name for small button', () => {
@@ -57,7 +67,17 @@ describe('Button', () => {
 
     const renderedButton = screen.getByRole('button', { name: label });
 
-    expect(renderedButton).toHaveClass('btn btn-primary btn--small');
+    expect(renderedButton).toHaveClass('btn btn--primary btn--small');
+  });
+
+  it('should render with the class name passed to componenet', () => {
+    const label = 'yeooo !';
+
+    render(<Button className='wah'>{label}</Button>);
+
+    const renderedButton = screen.getByRole('button', { name: label });
+
+    expect(renderedButton).toHaveClass('btn btn--primary wah');
   });
 
   it('should call the "onClick" handler supplied', () => {

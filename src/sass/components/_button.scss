@@ -2,9 +2,14 @@
   &,
   &:link,
   &:visited {
-    display: inline-block;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 10rem;
-    padding: 0.5rem 2.5rem;
+    padding: 0.5rem 2rem;
     font: inherit;
     font-weight: 800;
     transition: all 0.2s;
@@ -14,7 +19,7 @@
     border: solid 1px;
   }
 
-  &-primary {
+  &--primary {
     color: var(--colour-white);
     background-color: var(--colour-primary);
     border-color: var(--colour-primary);
@@ -26,7 +31,7 @@
     }
   }
 
-  &-secondary {
+  &--light {
     color: var(--colour-primary);
     background-color: transparent;
     border-color: var(--colour-primary);
@@ -39,8 +44,35 @@
     }
   }
 
+  &--dark {
+    color: var(--colour-white);
+    background-color: var(--colour-primary-dark-2);
+    border-color: var(--colour-primary-dark-2);
+
+    &:hover,
+    &:active {
+      border-color: var(--colour-primary-dark-3);
+      background-color: var(--colour-primary-dark-3);
+    }
+  }
+
   &--small {
     border-radius: 5px;
     padding: 0 1rem;
+  }
+
+  &__notification {
+    border: none;
+    border-radius: 10rem;
+    padding: 0 0.6rem;
+
+    background-color: var(--colour-primary);
+    border-color: var(--colour-primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.1em;
   }
 }
