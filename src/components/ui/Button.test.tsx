@@ -70,7 +70,7 @@ describe('Button', () => {
     expect(renderedButton).toHaveClass('btn btn--primary btn--small');
   });
 
-  it('should render with the class name passed to componenet', () => {
+  it('should render with the class name passed to component', () => {
     const label = 'yeooo !';
 
     render(<Button className='wah'>{label}</Button>);

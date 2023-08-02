@@ -13,13 +13,24 @@ type IconProps = {
    * Is the icon decorative
    */
   decorative?: boolean;
+  /**
+   * Classes to apply to the icon
+   */
+  className?: string;
 };
 
-export const Icon = ({ href, accessibleName, decorative = false }: IconProps): JSX.Element => {
+export const Icon = ({
+  href,
+  accessibleName,
+  decorative = false,
+  className,
+}: IconProps): JSX.Element => {
+  className = 'icon' + (className ? ` ${className}` : '');
+
   return (
     <svg
       role='img'
-      className='icon'
+      className={className}
       focusable='false'
       {...(decorative ? { 'aria-hidden': true } : {})}
     >

@@ -15,6 +15,15 @@ describe('Icon', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
+  it('should render with the class name passed to component', async () => {
+    const { container } = render(<Icon href='wha' accessibleName='something' className='yeo' />);
+
+    const icon = screen.getByRole('img', {});
+
+    expect(icon).toHaveClass('icon yeo');
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
   it('should render with the correct href', async () => {
     const expectedHref = sprite + '#wha';
     const { container } = render(<Icon href={expectedHref} accessibleName='something' />);
