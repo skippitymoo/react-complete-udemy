@@ -1,3 +1,22 @@
+.header {
+  background-color: var(--colour-primary);
+  // display: grid;
+  // grid-template-columns: 10% 1fr 1fr 10%;
+  // align-items: center;
+
+  height: var(--header-height);
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
 .header-cart-button {
   &__icon {
     height: 1.5rem;
