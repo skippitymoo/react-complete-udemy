@@ -34,6 +34,7 @@ html {
 
 body {
   padding: 3rem;
+  min-height: 100vh;
 
   @include mixins.respond(tab-port) {
     padding: 0;
