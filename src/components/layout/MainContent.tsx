@@ -7,7 +7,7 @@ export const MainContent = (): JSX.Element => {
       <div className='bg-image'>
         <img src={mealBgImage} alt='' className='bg-image__image' />
       </div>
-      {/* <div className="content"></div> */}
+      <div className='content'></div>
     </main>
   );
 };

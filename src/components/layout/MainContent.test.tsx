@@ -1,4 +1,6 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+// eslint-disable-next-line testing-library/no-dom-import
+// import { screen } from '@testing-library/dom';
 import { MainContent } from './MainContent';
 import { axe, toHaveNoViolations } from 'jest-axe';
 
@@ -9,5 +11,22 @@ describe('MainContent', () => {
     const { container } = render(<MainContent />);
 
     expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('should render with the correct class name', () => {
+    render(<MainContent />);
+
+    const main = screen.getByRole('main');
+
+    expect(main).toHaveClass('main-container');
+  });
+
+  it('should render image', () => {
+    render(<MainContent />);
+
+    const main = screen.getByRole('img');
+
+    expect(main).toHaveClass('bg-image__image');
+    // expect(main.parentNode).toHaveClass('bg-image');
   });
 });

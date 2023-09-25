@@ -6,8 +6,9 @@
 @use 'base/typography';
 @use 'base/utilities';
 
-@use 'components/button';
-@use 'components/icon';
+@use 'components/ui/button';
+@use 'components/ui/icon';
+@use 'components/meal/meal';
 
 @use 'layout/header';
 @use 'layout/content';
