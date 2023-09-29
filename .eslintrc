@@ -46,7 +46,8 @@
       {
         "allowExpressions": true
       }
-    ]
+    ],
+    "testing-library/no-node-access": ["error", { "allowContainerFirstChild": true }]
   },
   "settings": {
     "import/resolver": {
