@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MealItem renders the MealItem component and its children 1`] = `
+<div
+  class="meal-item"
+>
+  <div
+    class="meal-item__details"
+  >
+    <h3
+      class="meal-item__title"
+    >
+      item title
+    </h3>
+    <div
+      class="meal-item__description"
+    >
+      item description
+    </div>
+    <div
+      class="meal-item__price"
+    >
+      £22.99
+    </div>
+  </div>
+</div>
+`;
