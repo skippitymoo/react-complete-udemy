@@ -1,10 +1,6 @@
-import { JSX } from 'react';
+import React, { JSX } from 'react';
 
-type IconProps = {
-  /**
-   * Href for the icon
-   */
-  href: string;
+type IconProps = React.SVGProps<SVGSVGElement> & {
   /**
    * Accessible name when icon conveys info, is not decorative (also revealed as a native HTML tooltip on mouse hover)
    */
@@ -13,22 +9,20 @@ type IconProps = {
    * Is the icon decorative
    */
   decorative?: boolean;
-  /**
-   * Classes to apply to the icon
-   */
-  className?: string;
 };
 
 export const Icon = ({
   href,
+  className,
   accessibleName,
   decorative = false,
-  className,
+  ...rest
 }: IconProps): JSX.Element => {
   className = 'icon' + (className ? ` ${className}` : '');
 
   return (
     <svg
+      {...rest}
       role='img'
       className={className}
       focusable='false'

@@ -27,6 +27,8 @@
 // Meal item
 .meal-item {
   color: var(--colour-black);
+  display: flex;
+  justify-content: space-between;
 
   &__details {
     display: flex;
@@ -46,5 +48,12 @@
     font-size: 1.3rem;
     font-weight: 800;
     color: var(--colour-primary-light);
+  }
+
+  &__add {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    row-gap: 0.5rem;
   }
 }

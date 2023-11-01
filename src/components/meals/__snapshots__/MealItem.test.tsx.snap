@@ -23,5 +23,31 @@ exports[`MealItem renders the MealItem component and its children 1`] = `
       £22.99
     </div>
   </div>
+  <form
+    class="meal-item__add"
+    name="Add meal item"
+  >
+    <div
+      class="form__group"
+    >
+      <label
+        class="form__label"
+        for=":r0:"
+      >
+        Amount
+      </label>
+      <input
+        class="form__input "
+        id=":r0:"
+        type="number"
+        value="1"
+      />
+    </div>
+    <button
+      class="btn btn--primary btn--long "
+    >
+      + Add
+    </button>
+  </form>
 </div>
 `;

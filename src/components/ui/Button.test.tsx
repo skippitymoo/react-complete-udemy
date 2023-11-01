@@ -70,6 +70,16 @@ describe('Button', () => {
     expect(renderedButton).toHaveClass('btn btn--primary btn--small');
   });
 
+  it('should render with the correct class name for long button', () => {
+    const label = 'yeooo !';
+
+    render(<Button size='long'>{label}</Button>);
+
+    const renderedButton = screen.getByRole('button', { name: label });
+
+    expect(renderedButton).toHaveClass('btn btn--primary btn--long');
+  });
+
   it('should render with the class name passed to component', () => {
     const label = 'yeooo !';
 

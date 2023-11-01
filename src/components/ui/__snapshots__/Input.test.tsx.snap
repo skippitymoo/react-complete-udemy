@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders all the props 1`] = `
+<div
+  class="form__group"
+>
+  <label
+    class="form__label"
+    for=":r0:"
+  >
+    label yeo
+  </label>
+  <input
+    class="form__input yeo-class"
+    id=":r0:"
+  />
+</div>
+`;

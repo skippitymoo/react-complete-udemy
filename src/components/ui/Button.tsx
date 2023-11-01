@@ -8,7 +8,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   /**
    * What size should the button be?
    */
-  size?: 'small' | 'normal';
+  size?: 'small' | 'normal' | 'long';
 };
 
 type ButtonNotificationProps = {
@@ -24,7 +24,7 @@ const ButtonComponent = ({
   size = 'normal',
   ...rest
 }: ButtonProps): JSX.Element => {
-  const sizeClass = size === 'small' ? 'btn--small' : '';
+  const sizeClass = size === 'normal' ? '' : `btn--${size}`;
   const className = `btn btn--${variant} ${sizeClass} ${rest.className ? rest.className : ''}`;
 
   return (

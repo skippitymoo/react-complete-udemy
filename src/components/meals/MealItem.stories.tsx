@@ -15,6 +15,7 @@ export const Default: Story = {
   render: () => (
     <MealItem>
       <MealItem.Details title='Sushi' description='Finest fish and veggies' price={22.99} />
+      <MealItem.AddToBasket onAddToBasket={() => {}} />
     </MealItem>
   ),
 };

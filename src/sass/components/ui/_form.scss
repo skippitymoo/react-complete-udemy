@@ -1,0 +1,25 @@
+.form {
+  &__group {
+    color: var(--colour-black);
+  }
+
+  &__label {
+    font-weight: 700;
+    margin-right: 1.25rem;
+  }
+
+  &__input {
+    font: inherit;
+    color: inherit;
+    width: 3.75rem;
+    border: 1px solid var(--colour-grey-light-1);
+    border-radius: 3px;
+    padding-left: 0.5rem;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    }
+  }
+}
