@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render the class(es) and children provided 1`] = `
+<div
+  class="card test-class test-class__yeo"
+>
+  <div>
+    Yeooo
+  </div>
+  <div>
+    Yeooo 2
+  </div>
+</div>
+`;
