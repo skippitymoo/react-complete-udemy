@@ -9,7 +9,7 @@ describe('MealItem', () => {
   it('renders the MealItem component and its children', async () => {
     const { container } = render(
       <MealItem>
-        <MealItem.Details title='item title' description='item description' price={22.99} />
+        <MealItem.Details name='item title' description='item description' price={22.99} />
         <MealItem.AddToBasket onAddToBasket={(numberOfItems: number) => {}} />
       </MealItem>,
     );
