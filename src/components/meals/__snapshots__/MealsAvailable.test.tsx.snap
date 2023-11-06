@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MealsAvailable should render as expected 1`] = `
+<section
+  class="meals-available"
+>
+  <ul>
+    <li>
+      <div
+        class="meal-item"
+      >
+        <div
+          class="meal-item__details"
+        >
+          <h3
+            class="meal-item__title"
+          >
+            Sushi
+          </h3>
+          <div
+            class="meal-item__description"
+          >
+            Finest fish and veggies
+          </div>
+          <div
+            class="meal-item__price"
+          >
+            £22.99
+          </div>
+        </div>
+        <form
+          class="meal-item__add"
+          name="Add meal item"
+        >
+          <div
+            class="form__group"
+          >
+            <label
+              class="form__label"
+              for=":r4:"
+            >
+              Amount
+            </label>
+            <input
+              class="form__input "
+              id=":r4:"
+              type="number"
+              value="1"
+            />
+          </div>
+          <button
+            class="btn btn--primary btn--long "
+          >
+            + Add
+          </button>
+        </form>
+      </div>
+    </li>
+    <li>
+      <div
+        class="meal-item"
+      >
+        <div
+          class="meal-item__details"
+        >
+          <h3
+            class="meal-item__title"
+          >
+            Schnitzel
+          </h3>
+          <div
+            class="meal-item__description"
+          >
+            A german specialty!
+          </div>
+          <div
+            class="meal-item__price"
+          >
+            £16.50
+          </div>
+        </div>
+        <form
+          class="meal-item__add"
+          name="Add meal item"
+        >
+          <div
+            class="form__group"
+          >
+            <label
+              class="form__label"
+              for=":r5:"
+            >
+              Amount
+            </label>
+            <input
+              class="form__input "
+              id=":r5:"
+              type="number"
+              value="1"
+            />
+          </div>
+          <button
+            class="btn btn--primary btn--long "
+          >
+            + Add
+          </button>
+        </form>
+      </div>
+    </li>
+    <li>
+      <div
+        class="meal-item"
+      >
+        <div
+          class="meal-item__details"
+        >
+          <h3
+            class="meal-item__title"
+          >
+            Barbecue Burger
+          </h3>
+          <div
+            class="meal-item__description"
+          >
+            American, raw, meaty
+          </div>
+          <div
+            class="meal-item__price"
+          >
+            £12.99
+          </div>
+        </div>
+        <form
+          class="meal-item__add"
+          name="Add meal item"
+        >
+          <div
+            class="form__group"
+          >
+            <label
+              class="form__label"
+              for=":r6:"
+            >
+              Amount
+            </label>
+            <input
+              class="form__input "
+              id=":r6:"
+              type="number"
+              value="1"
+            />
+          </div>
+          <button
+            class="btn btn--primary btn--long "
+          >
+            + Add
+          </button>
+        </form>
+      </div>
+    </li>
+    <li>
+      <div
+        class="meal-item"
+      >
+        <div
+          class="meal-item__details"
+        >
+          <h3
+            class="meal-item__title"
+          >
+            Green Bowl
+          </h3>
+          <div
+            class="meal-item__description"
+          >
+            Healthy...and green...
+          </div>
+          <div
+            class="meal-item__price"
+          >
+            £18.99
+          </div>
+        </div>
+        <form
+          class="meal-item__add"
+          name="Add meal item"
+        >
+          <div
+            class="form__group"
+          >
+            <label
+              class="form__label"
+              for=":r7:"
+            >
+              Amount
+            </label>
+            <input
+              class="form__input "
+              id=":r7:"
+              type="number"
+              value="1"
+            />
+          </div>
+          <button
+            class="btn btn--primary btn--long "
+          >
+            + Add
+          </button>
+        </form>
+      </div>
+    </li>
+  </ul>
+</section>
+`;
