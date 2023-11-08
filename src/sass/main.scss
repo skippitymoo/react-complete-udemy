@@ -6,11 +6,11 @@
 @use 'base/typography';
 @use 'base/utilities';
 
+@use 'layout/header';
+@use 'layout/content';
+
 @use 'components/ui/button';
 @use 'components/ui/icon';
 @use 'components/ui/form';
 @use 'components/ui/card';
 @use 'components/meal/meal';
-
-@use 'layout/header';
-@use 'layout/content';
