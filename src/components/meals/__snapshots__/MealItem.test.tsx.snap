@@ -37,14 +37,14 @@ exports[`MealItem renders the MealItem component and its children 1`] = `
         Amount
       </label>
       <input
-        class="form__input "
+        class="form__input"
         id=":r0:"
         type="number"
         value="1"
       />
     </div>
     <button
-      class="btn btn--primary btn--long "
+      class="btn btn--primary btn--long"
     >
       + Add
     </button>

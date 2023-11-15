@@ -4,5 +4,5 @@ export const Card = ({
   className,
   children,
 }: React.HTMLAttributes<HTMLDivElement>): JSX.Element => {
-  return <div className={`card ${className}`}>{children}</div>;
+  return <div className={`card ${className ?? ''}`.trim()}>{children}</div>;
 };

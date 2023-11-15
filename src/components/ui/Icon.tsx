@@ -18,13 +18,11 @@ export const Icon = ({
   decorative = false,
   ...rest
 }: IconProps): JSX.Element => {
-  className = 'icon' + (className ? ` ${className}` : '');
-
   return (
     <svg
       {...rest}
       role='img'
-      className={className}
+      className={`icon ${className ?? ''}`.trim()}
       focusable='false'
       {...(decorative ? { 'aria-hidden': true } : {})}
     >

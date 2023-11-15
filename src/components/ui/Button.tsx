@@ -25,10 +25,9 @@ const ButtonComponent = ({
   ...rest
 }: ButtonProps): JSX.Element => {
   const sizeClass = size === 'normal' ? '' : `btn--${size}`;
-  const className = `btn btn--${variant} ${sizeClass} ${rest.className ? rest.className : ''}`;
 
   return (
-    <button {...rest} className={className}>
+    <button {...rest} className={`btn btn--${variant} ${sizeClass} ${rest.className ?? ''}`.trim()}>
       {children}
     </button>
   );

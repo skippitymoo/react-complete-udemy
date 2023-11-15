@@ -42,14 +42,14 @@ exports[`MealsAvailable should render as expected 1`] = `
               Amount
             </label>
             <input
-              class="form__input "
+              class="form__input"
               id=":r4:"
               type="number"
               value="1"
             />
           </div>
           <button
-            class="btn btn--primary btn--long "
+            class="btn btn--primary btn--long"
           >
             + Add
           </button>
@@ -93,14 +93,14 @@ exports[`MealsAvailable should render as expected 1`] = `
               Amount
             </label>
             <input
-              class="form__input "
+              class="form__input"
               id=":r5:"
               type="number"
               value="1"
             />
           </div>
           <button
-            class="btn btn--primary btn--long "
+            class="btn btn--primary btn--long"
           >
             + Add
           </button>
@@ -144,14 +144,14 @@ exports[`MealsAvailable should render as expected 1`] = `
               Amount
             </label>
             <input
-              class="form__input "
+              class="form__input"
               id=":r6:"
               type="number"
               value="1"
             />
           </div>
           <button
-            class="btn btn--primary btn--long "
+            class="btn btn--primary btn--long"
           >
             + Add
           </button>
@@ -195,14 +195,14 @@ exports[`MealsAvailable should render as expected 1`] = `
               Amount
             </label>
             <input
-              class="form__input "
+              class="form__input"
               id=":r7:"
               type="number"
               value="1"
             />
           </div>
           <button
-            class="btn btn--primary btn--long "
+            class="btn btn--primary btn--long"
           >
             + Add
           </button>

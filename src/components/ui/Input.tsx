@@ -9,14 +9,13 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 export const Input = ({ label, className, ...rest }: InputProps): JSX.Element => {
   const id = useId();
-  className = className ?? '';
 
   return (
     <div className='form__group'>
       <label htmlFor={id} className='form__label'>
         {label}
       </label>
-      <input {...rest} id={id} className={`form__input ${className}`} />
+      <input {...rest} id={id} className={`form__input ${className ?? ''}`.trim()} />
     </div>
   );
 };
