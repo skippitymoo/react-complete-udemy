@@ -1,0 +1,35 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  &__details {
+    flex: 1 0 20rem;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+
+  &__price {
+    font-weight: 800;
+    color: var(--colour-primary-light);
+  }
+
+  &__amount {
+    margin-left: 4rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+
+    & > *:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+}

@@ -16,3 +16,14 @@ export type Meal = {
    */
   price: number;
 };
+
+export type CartItem = {
+  /**
+   * Number of items of this meal
+   */
+  amount: number;
+  /**
+   * The meal for this cart item
+   */
+  meal: Meal;
+};

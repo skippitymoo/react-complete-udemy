@@ -2,7 +2,7 @@ import React, { JSX, useState } from 'react';
 import { formatCurrency } from '../../utils/utilities';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
-import { Meal } from './meal.types';
+import { Meal } from '../menu.types';
 
 const DEFAULT_ADD_TO_BASKET_AMOUNT = 1;
 

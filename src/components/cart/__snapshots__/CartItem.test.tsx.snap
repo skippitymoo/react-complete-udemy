@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartItem renders all the props 1`] = `
+<div
+  class="cart-item"
+>
+  <div
+    class="cart-item__details"
+  >
+    <div
+      class="cart-item__title"
+    >
+      Schnitzel
+    </div>
+    <span
+      class="cart-item__price"
+    >
+      16.5
+    </span>
+    <span
+      class="chip cart-item__amount"
+    >
+      x 4
+    </span>
+  </div>
+  <div
+    class="cart-item__actions"
+  >
+    <button
+      class="btn btn--light btn--small"
+    >
+      −
+    </button>
+    <button
+      class="btn btn--light btn--small"
+    >
+      +
+    </button>
+  </div>
+</div>
+`;

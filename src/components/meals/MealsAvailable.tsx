@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { Meal } from './meal.types';
+import { Meal } from '../menu.types';
 import { MealItem } from './MealItem';
 
 const DUMMY_MEALS: Meal[] = [
