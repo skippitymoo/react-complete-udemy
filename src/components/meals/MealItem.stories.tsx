@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { MealItem } from './MealItem';
 
 const meta: Meta<typeof MealItem> = {

@@ -15,7 +15,7 @@ exports[`CartItem renders all the props 1`] = `
     <span
       class="cart-item__price"
     >
-      16.5
+      £16.50
     </span>
     <span
       class="chip cart-item__amount"
