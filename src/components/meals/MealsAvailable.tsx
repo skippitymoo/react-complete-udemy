@@ -2,6 +2,7 @@ import { JSX } from 'react';
 import { Meal } from '../menu.types';
 import { MealItem } from './MealItem';
 
+// TODO: serve meal items via an API
 const DUMMY_MEALS: Meal[] = [
   {
     id: 'm1',

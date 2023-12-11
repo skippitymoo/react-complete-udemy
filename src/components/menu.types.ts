@@ -27,3 +27,10 @@ export type CartItem = {
    */
   meal: Meal;
 };
+
+export type CartItemChange = {
+  /**
+   * Modify the item amount
+   */
+  onAmountChange: (changeBy: number) => void;
+};

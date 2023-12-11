@@ -17,7 +17,7 @@
 
   &__price {
     font-weight: 800;
-    color: var(--colour-primary-light);
+    color: var(--colour-primary);
   }
 
   &__amount {
@@ -25,7 +25,7 @@
   }
 
   &__actions {
-    display: flex;
+    display: inline-flex;
     justify-content: flex-end;
 
     & > *:not(:last-child) {
