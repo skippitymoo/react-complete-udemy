@@ -4,12 +4,12 @@
   &:visited {
     display: inline-flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.4rem;
     align-items: center;
     justify-content: center;
 
     border-radius: 10rem;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
     font: inherit;
     font-weight: 800;
     transition: all 0.2s;
@@ -61,10 +61,12 @@
     padding: 0 1rem;
   }
 
+  // shifting notification badge to the right a bit (based on https://mui.com/material-ui/react-chip/#custom-delete-icon)
   &__notification {
     border: none;
     border-radius: 10rem;
     padding: 0 0.8rem;
+    margin-right: -0.5rem;
 
     background-color: var(--colour-primary-light);
     border-color: var(--colour-primary-light);
