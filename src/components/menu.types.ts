@@ -28,9 +28,20 @@ export type CartItem = {
   meal: Meal;
 };
 
-export type CartItemChange = {
+export type CartItemActions = {
   /**
    * Modify the item amount
    */
   onAmountChange: (changeBy: number) => void;
+};
+
+export type CartActions = {
+  /**
+   * Close the dialog
+   */
+  onClose: () => void;
+  /**
+   * Order is placed
+   */
+  onOrder: () => void;
 };

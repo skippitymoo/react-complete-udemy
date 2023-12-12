@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@axe-core/react": "^4.7.3",
+    "@storybook/addon-a11y": "^7.6.4",
     "@storybook/addon-essentials": "^7.4.5",
     "@storybook/addon-interactions": "^7.4.5",
     "@storybook/addon-links": "^7.4.5",

@@ -7,6 +7,10 @@ describe('utilities', () => {
       expectedVal: '£6.66',
     },
     {
+      number: 55.5,
+      expectedVal: '£55.50',
+    },
+    {
       number: 6660.22,
       expectedVal: '£6,660.22',
     },

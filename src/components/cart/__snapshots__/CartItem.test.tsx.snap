@@ -7,11 +7,11 @@ exports[`CartItem renders all the props 1`] = `
   <div
     class="cart-item__details"
   >
-    <div
+    <h3
       class="cart-item__title"
     >
       Schnitzel
-    </div>
+    </h3>
     <span
       class="cart-item__price"
     >
