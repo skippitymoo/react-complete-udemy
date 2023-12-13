@@ -9,8 +9,8 @@ export const CartItem = ({
   meal,
   onAmountChange,
 }: CartItemType & CartItemActions): JSX.Element => {
-  const clickHandler = (changeBy: number): void => {
-    onAmountChange(changeBy);
+  const clickHandler = (id: string, changeBy: number): void => {
+    onAmountChange(id, changeBy);
   };
 
   return (
@@ -21,10 +21,10 @@ export const CartItem = ({
         <Chip className='cart-item__amount'>{`x ${amount}`}</Chip>
       </div>
       <div className='cart-item__actions'>
-        <Button size='small' variant='light' onClick={() => clickHandler(-1)}>
+        <Button size='small' variant='light' onClick={() => clickHandler(meal.id, -1)}>
           &minus;
         </Button>
-        <Button size='small' variant='light' onClick={() => clickHandler(1)}>
+        <Button size='small' variant='light' onClick={() => clickHandler(meal.id, 1)}>
           +
         </Button>
       </div>

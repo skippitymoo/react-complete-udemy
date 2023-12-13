@@ -1,34 +1,17 @@
 import { JSX } from 'react';
-import { CartActions, CartItem as CartItemType } from '../menu.types';
+import { CartActions, CartItem as CartItemType, Cart as CartType } from '../menu.types';
 import { CartItem } from './CartItem';
 import { formatCurrency } from '../../utils/utilities';
 import { Button } from '../ui/Button';
 
-// TODO: remove hard-coded cart
-const CART_SELECTIONS: CartItemType[] = [
-  {
-    amount: 1,
-    meal: {
-      id: 'm1',
-      name: 'Sushi',
-      description: 'Finest fish and veggies',
-      price: 22.99,
-    },
-  },
-  {
-    amount: 4,
-    meal: {
-      id: 'm2',
-      name: 'Schnitzel',
-      description: 'A german specialty!',
-      price: 16.5,
-    },
-  },
-];
-
 type ClickType = 'close' | 'order';
 
-export const Cart = ({ onClose, onOrder }: CartActions): JSX.Element => {
+export const Cart = ({
+  cartItems,
+  onAmountChange,
+  onClose,
+  onOrder,
+}: CartType & CartActions): JSX.Element => {
   const clickHandler = (clickType: ClickType): void => {
     if (clickType === 'order') {
       // TODO: order the items in the cart
@@ -38,16 +21,16 @@ export const Cart = ({ onClose, onOrder }: CartActions): JSX.Element => {
     onClose();
   };
 
-  const total = CART_SELECTIONS.reduce((prev, curr) => {
+  const total = cartItems.reduce((prev, curr) => {
     return prev + curr.amount * curr.meal.price;
   }, 0);
 
   return (
     <section className='cart'>
       <ul>
-        {CART_SELECTIONS.map((item: CartItemType) => (
+        {cartItems.map((item: CartItemType) => (
           <li key={item.meal.id} className='cart__list-item'>
-            <CartItem amount={item.amount} meal={item.meal} onAmountChange={() => {}} />
+            <CartItem amount={item.amount} meal={item.meal} onAmountChange={onAmountChange} />
           </li>
         ))}
       </ul>

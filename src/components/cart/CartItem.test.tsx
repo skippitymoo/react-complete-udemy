@@ -34,7 +34,7 @@ describe('CartItem', () => {
       renderedAddButton.click();
 
       expect(onHandler).toHaveBeenCalledTimes(1);
-      expect(onHandler).toHaveBeenLastCalledWith(1);
+      expect(onHandler).toHaveBeenLastCalledWith('dummy', 1);
     });
 
     it('should recieve a decrement', () => {
@@ -44,7 +44,7 @@ describe('CartItem', () => {
       renderedMinusButton.click();
 
       expect(onHandler).toHaveBeenCalledTimes(1);
-      expect(onHandler).toHaveBeenLastCalledWith(-1);
+      expect(onHandler).toHaveBeenLastCalledWith('dummy', -1);
     });
   });
 });

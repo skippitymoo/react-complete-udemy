@@ -30,9 +30,16 @@ export type CartItem = {
 
 export type CartItemActions = {
   /**
-   * Modify the item amount
+   * Modify the amount for the cart item
    */
-  onAmountChange: (changeBy: number) => void;
+  onAmountChange: (mealId: string, changeBy: number) => void;
+};
+
+export type Cart = {
+  /**
+   * Cart items currently in the cart
+   */
+  cartItems: CartItem[];
 };
 
 export type CartActions = {
@@ -44,4 +51,4 @@ export type CartActions = {
    * Order is placed
    */
   onOrder: () => void;
-};
+} & CartItemActions;
