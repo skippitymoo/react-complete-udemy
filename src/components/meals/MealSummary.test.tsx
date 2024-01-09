@@ -5,7 +5,7 @@ import { axe, toHaveNoViolations } from 'jest-axe';
 expect.extend(toHaveNoViolations);
 
 describe('MealSummary', () => {
-  it('should pass axe', async () => {
+  it('has no accessibility violations', async () => {
     const { container } = render(<MealSummary />);
     expect(await axe(container)).toHaveNoViolations();
   });

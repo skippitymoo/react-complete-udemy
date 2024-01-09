@@ -14,8 +14,18 @@ describe('MealItem', () => {
       </MealItem>,
     );
 
-    expect(await axe(container)).toHaveNoViolations();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('has no accessibility violations', async () => {
+    const { container } = render(
+      <MealItem>
+        <MealItem.Details name='item title' description='item description' price={22.99} />
+        <MealItem.AddToBasket onAddToBasket={(numberOfItems: number) => {}} />
+      </MealItem>,
+    );
+
+    expect(await axe(container)).toHaveNoViolations();
   });
 
   it('should call the "onAddToBasket" handler when item(s) added', async () => {

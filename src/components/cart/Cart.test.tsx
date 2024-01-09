@@ -42,8 +42,20 @@ describe('Cart', () => {
       />,
     );
 
-    expect(await axe(container)).toHaveNoViolations();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('has no accessibility violations', async () => {
+    const { container } = render(
+      <Cart
+        onCartChange={() => {}}
+        initialCartItems={cartItems}
+        onClose={() => {}}
+        onOrder={() => {}}
+      />,
+    );
+
+    expect(await axe(container)).toHaveNoViolations();
   });
 
   it('displays the total', async () => {

@@ -5,7 +5,7 @@ import { Header } from './Header';
 expect.extend(toHaveNoViolations);
 
 describe('Header', () => {
-  it('should pass axe', async () => {
+  it('has no accessibility violations', async () => {
     const { container } = render(<Header />);
 
     expect(await axe(container)).toHaveNoViolations();

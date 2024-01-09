@@ -33,7 +33,7 @@ const meals: Meal[] = [
 ];
 
 describe('MealsAvailable', () => {
-  it('should pass axe', async () => {
+  it('has no accessibility violations', async () => {
     const { container } = render(<MealsAvailable availableMeals={meals} />);
     expect(await axe(container)).toHaveNoViolations();
   });

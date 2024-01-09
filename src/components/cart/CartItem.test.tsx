@@ -16,8 +16,13 @@ describe('CartItem', () => {
   it('renders all the props', async () => {
     const { container } = render(<CartItem meal={meal} amount={4} onAmountChange={() => {}} />);
 
-    expect(await axe(container)).toHaveNoViolations();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('has no accessibility violations', async () => {
+    const { container } = render(<CartItem meal={meal} amount={4} onAmountChange={() => {}} />);
+
+    expect(await axe(container)).toHaveNoViolations();
   });
 
   describe('"onAmountChange" handler', () => {

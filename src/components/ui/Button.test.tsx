@@ -5,7 +5,7 @@ import { Button } from './Button';
 expect.extend(toHaveNoViolations);
 
 describe('Button', () => {
-  it('should pass axe', async () => {
+  it('has no accessibility violations', async () => {
     const { container } = render(<Button>dummy</Button>);
     expect(await axe(container)).toHaveNoViolations();
   });

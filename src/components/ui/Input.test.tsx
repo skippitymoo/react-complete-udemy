@@ -9,8 +9,13 @@ describe('Input', () => {
   it('renders all the props', async () => {
     const { container } = render(<Input label='label yeo' className='yeo-class' />);
 
-    expect(await axe(container)).toHaveNoViolations();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('has no accessibility violations', async () => {
+    const { container } = render(<Input label='label yeo' className='yeo-class' />);
+
+    expect(await axe(container)).toHaveNoViolations();
   });
 
   it('handles input', async () => {

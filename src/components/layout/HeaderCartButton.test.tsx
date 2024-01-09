@@ -5,7 +5,7 @@ import { axe, toHaveNoViolations } from 'jest-axe';
 expect.extend(toHaveNoViolations);
 
 describe('HeaderCartButton', () => {
-  it('should pass axe', async () => {
+  it('has no accessibility violations', async () => {
     const { container } = render(<HeaderCartButton text='dummy' itemCount={1} />);
 
     expect(await axe(container)).toHaveNoViolations();
