@@ -13,7 +13,7 @@ type story = StoryObj<typeof meta>;
 
 export const Default: story = {
   args: {
-    cartItems: [
+    initialCartItems: [
       {
         amount: 1,
         meal: {

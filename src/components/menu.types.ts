@@ -17,6 +17,13 @@ export type Meal = {
   price: number;
 };
 
+export type MealsAvailable = {
+  /**
+   * List of meals available
+   */
+  availableMeals: Meal[];
+};
+
 export type CartItem = {
   /**
    * Number of items of this meal
@@ -39,10 +46,14 @@ export type Cart = {
   /**
    * Cart items currently in the cart
    */
-  cartItems: CartItem[];
+  initialCartItems: CartItem[];
 };
 
 export type CartActions = {
+  /**
+   * The new total number of items in the cart
+   */
+  onCartChange: (totalCartItems: number) => void;
   /**
    * Close the dialog
    */
@@ -51,4 +62,4 @@ export type CartActions = {
    * Order is placed
    */
   onOrder: () => void;
-} & CartItemActions;
+};
