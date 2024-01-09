@@ -11,16 +11,6 @@
 
 html {
   box-sizing: border-box;
-  /* TODO: remove adjustment of font-size, so that it is still the browser default (16px), then
-           sort out the adjustments for different device sizes  */
-
-  /* font-size: 10px;
-      better practice to use percentage,
-      as user may have a font-size setting on their browser */
-
-  /* To get default of 10px, based on default browser setting of 16px => 10/16 = 62.5% */
-  // leaving this in _base.scss as it is to define what 1rem is
-  font-size: 62.5%;
 
   // @include mixins.respond(tab-land) {
   //   font-size: 56.25%; // 1 rem = 9px, 9/16 = 56.25%
