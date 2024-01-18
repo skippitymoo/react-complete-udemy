@@ -9,6 +9,12 @@
   box-sizing: inherit;
 }
 
+*:focus,
+*:focus-visible,
+*:focus-within {
+  outline-color: var(--colour-primary-light);
+}
+
 html {
   box-sizing: border-box;
 

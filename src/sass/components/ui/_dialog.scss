@@ -1,0 +1,20 @@
+.dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  min-width: 75%;
+  min-height: 50%;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  border-width: 0;
+  padding: 1rem;
+
+  transition: all 0.4s 0.2s;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
