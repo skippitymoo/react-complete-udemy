@@ -1,7 +1,7 @@
 import React, { JSX, forwardRef, useImperativeHandle, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-export type DialogProps = React.ComponentPropsWithoutRef<'dialog'>;
+export type DialogProps = React.ComponentPropsWithRef<'dialog'>;
 
 export type DialogRef = {
   /**

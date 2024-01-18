@@ -3,6 +3,6 @@ import React, { JSX } from 'react';
 export const Card = ({
   className,
   children,
-}: React.HTMLAttributes<HTMLDivElement>): JSX.Element => {
+}: React.ComponentPropsWithoutRef<'div'>): JSX.Element => {
   return <div className={`card ${className ?? ''}`.trim()}>{children}</div>;
 };

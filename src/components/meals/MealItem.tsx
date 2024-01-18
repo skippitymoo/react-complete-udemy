@@ -13,7 +13,7 @@ export type AddToBasket = {
   onAddToBasket: (numberOfItems: number) => void;
 };
 
-const MealItemComponent = ({ children }: React.HTMLAttributes<HTMLDivElement>): JSX.Element => {
+const MealItemComponent = ({ children }: React.ComponentPropsWithoutRef<'div'>): JSX.Element => {
   return <div className='meal-item'>{children}</div>;
 };
 

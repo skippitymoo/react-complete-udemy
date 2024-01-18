@@ -1,6 +1,6 @@
 import React, { JSX } from 'react';
 
-type IconProps = React.SVGProps<SVGSVGElement> & {
+type IconProps = React.ComponentPropsWithoutRef<'svg'> & {
   /**
    * Accessible name when icon conveys info, is not decorative (also revealed as a native HTML tooltip on mouse hover)
    */

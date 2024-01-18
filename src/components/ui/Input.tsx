@@ -1,6 +1,6 @@
 import React, { JSX, useId } from 'react';
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type InputProps = React.ComponentPropsWithoutRef<'input'> & {
   /**
    * The label for the input
    */

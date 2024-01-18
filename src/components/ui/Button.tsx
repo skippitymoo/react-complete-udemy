@@ -1,6 +1,6 @@
 import React, { JSX } from 'react';
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = React.ComponentPropsWithoutRef<'button'> & {
   /**
    * Which style variant to apply?
    */
