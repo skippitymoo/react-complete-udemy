@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog should be visible when dialog open 1`] = `
+<div
+  id="modal"
+>
+  <dialog
+    class="dialog"
+    open=""
+  >
+    <div>
+      yeooo !
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Dialog should not be visible when dialog closed 1`] = `
+<div
+  id="modal"
+>
+  <dialog
+    class="dialog"
+  >
+    <div>
+      yeooo !
+    </div>
+  </dialog>
+</div>
+`;
+
+exports[`Dialog should render 1`] = `
+<div
+  id="modal"
+>
+  <dialog
+    class="dialog"
+  >
+    <div>
+      yeooo !
+    </div>
+  </dialog>
+</div>
+`;

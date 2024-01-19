@@ -35,7 +35,7 @@ const Dialog = forwardRef<DialogRef, DialogProps>(function CustomDialog(
     <dialog ref={dialog} className='dialog'>
       {children}
     </dialog>,
-    document?.getElementsByTagName('body')[0],
+    document?.getElementById('modal')!,
   );
 });
 
