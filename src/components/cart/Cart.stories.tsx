@@ -1,5 +1,8 @@
+import { JSX, useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Cart } from './Cart';
+import { DialogRef } from '../ui/Dialog';
+import { CartProps } from '../menu.types';
 
 const meta: Meta<typeof Cart> = {
   title: 'Cart/Cart',
@@ -9,9 +12,24 @@ const meta: Meta<typeof Cart> = {
 
 export default meta;
 
-type story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>;
 
-export const Default: story = {
+const CartModalWithButtonTemplate = (props: CartProps): JSX.Element => {
+  const refDialog = useRef<DialogRef>(null);
+  const clickHandler = (): void => {
+    refDialog.current?.open();
+  };
+
+  return (
+    <>
+      <button onClick={clickHandler}>Cart component is a modal. Click to open</button>
+      <Cart {...props} ref={refDialog} />
+    </>
+  );
+};
+
+export const Default: Story = {
+  render: ({ ...props }) => <CartModalWithButtonTemplate {...props} />,
   args: {
     initialCartItems: [
       {

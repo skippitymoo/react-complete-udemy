@@ -34,7 +34,8 @@ exports[`Dialog should render 1`] = `
   id="modal"
 >
   <dialog
-    class="dialog"
+    class="dialog random-class"
+    open=""
   >
     <div>
       yeooo !

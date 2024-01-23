@@ -55,11 +55,9 @@ export type CartActions = {
    */
   onCartChange: (totalCartItems: number) => void;
   /**
-   * Close the dialog
-   */
-  onClose: () => void;
-  /**
    * Order is placed
    */
   onOrder: () => void;
 };
+
+export type CartProps = Cart & CartActions;

@@ -16,7 +16,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const DialogWithButtonTemplate = ({ children }: DialogProps): JSX.Element => {
+const DialogWithButtonTemplate = ({ children, ...rest }: DialogProps): JSX.Element => {
   const refDialog = useRef<DialogRef>(null);
   const clickHandler = (): void => {
     refDialog.current?.open();
@@ -25,7 +25,9 @@ const DialogWithButtonTemplate = ({ children }: DialogProps): JSX.Element => {
   return (
     <>
       <button onClick={clickHandler}>Open the dialog</button>
-      <Dialog ref={refDialog}>{children}</Dialog>
+      <Dialog {...rest} ref={refDialog}>
+        {children}
+      </Dialog>
     </>
   );
 };

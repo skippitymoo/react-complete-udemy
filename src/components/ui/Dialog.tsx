@@ -1,7 +1,9 @@
-import React, { JSX, forwardRef, useImperativeHandle, useRef } from 'react';
+import React, { JSX, forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-export type DialogProps = React.ComponentPropsWithRef<'dialog'>;
+export type DialogProps = {
+  initShowModal?: boolean;
+} & React.ComponentPropsWithRef<'dialog'>;
 
 export type DialogRef = {
   /**
@@ -15,12 +17,16 @@ export type DialogRef = {
 };
 
 const Dialog = forwardRef<DialogRef, DialogProps>(function CustomDialog(
-  { children },
+  { initShowModal = false, children, className, ...rest },
   ref,
 ): JSX.Element {
   const dialog = useRef<HTMLDialogElement>(null);
 
-  useImperativeHandle(ref, () => {
+  useEffect(() => {
+    if (initShowModal) dialog.current?.showModal();
+  });
+
+  useImperativeHandle(ref, (): DialogRef => {
     return {
       open() {
         dialog?.current?.showModal();
@@ -32,7 +38,7 @@ const Dialog = forwardRef<DialogRef, DialogProps>(function CustomDialog(
   });
 
   return createPortal(
-    <dialog ref={dialog} className='dialog'>
+    <dialog {...rest} ref={dialog} className={`dialog ${className || ''}`.trim()}>
       {children}
     </dialog>,
     document?.getElementById('modal')!,

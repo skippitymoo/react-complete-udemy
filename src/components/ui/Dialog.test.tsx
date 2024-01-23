@@ -1,38 +1,16 @@
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
-import { Dialog, DialogRef } from './Dialog';
 import React from 'react';
+import { Dialog, DialogRef } from './Dialog';
+import { setUpModalContainer } from '../../utils/testUtils';
 
 expect.extend(toHaveNoViolations);
 
 describe('Dialog', () => {
   let modalContainer: HTMLDivElement;
 
-  /**
-   * React Testing Library uses jsdom, which currently does not support HTMLDialogElement
-   * https://github.com/testing-library/react-testing-library/issues/1106#issuecomment-1209419325
-   * https://github.com/jsdom/jsdom/issues/3294#issuecomment-1268330372
-   */
   beforeEach(() => {
-    document.body.replaceChildren();
-    const modalDiv = document.createElement('div');
-    modalDiv.setAttribute('id', 'modal');
-    modalContainer = document.body.appendChild(modalDiv);
-
-    const showMock = jest.fn().mockImplementation(function mock(this: HTMLDialogElement) {
-      this.setAttribute('open', '');
-      this.open = true;
-    });
-
-    HTMLDialogElement.prototype.show = showMock;
-
-    HTMLDialogElement.prototype.showModal = showMock;
-
-    HTMLDialogElement.prototype.close = jest.fn().mockImplementation(function mock(
-      this: HTMLDialogElement,
-    ) {
-      this.open = false;
-    });
+    modalContainer = setUpModalContainer();
   });
 
   it('has no accessibility violations', async () => {
@@ -44,14 +22,18 @@ describe('Dialog', () => {
     const dialogRef = React.createRef<DialogRef>();
 
     const { container } = render(
-      <Dialog ref={dialogRef}>
+      <Dialog ref={dialogRef} className='random-class'>
         <div>yeooo !</div>
       </Dialog>,
       { container: modalContainer },
     );
 
+    act(() => {
+      dialogRef.current?.open();
+    });
+
     await waitFor(() => {
-      expect(screen.getByText(/yeooo !/i)).not.toBeVisible();
+      expect(screen.getByText(/yeooo !/i)).toBeVisible();
     });
 
     expect(container).toMatchSnapshot();
@@ -105,5 +87,18 @@ describe('Dialog', () => {
     });
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should initially open dialog', async () => {
+    render(
+      <Dialog initShowModal={true}>
+        <div>yeooo !</div>
+      </Dialog>,
+      { container: modalContainer },
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText(/yeooo !/i)).toBeVisible();
+    });
   });
 });

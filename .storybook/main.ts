@@ -16,5 +16,9 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   staticDirs: ['../public'],
+  previewBody: (body) => `
+    <div id="modal"></div>
+    ${body}
+  `,
 };
 export default config;
