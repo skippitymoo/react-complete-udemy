@@ -1,8 +1,5 @@
-import React, { JSX } from 'react';
+import React, { FC } from 'react';
 
-export const Chip = ({
-  className,
-  children,
-}: React.ComponentPropsWithoutRef<'span'>): JSX.Element => {
+export const Chip: FC<React.ComponentPropsWithoutRef<'span'>> = ({ className, children }) => {
   return <span className={`chip ${className ?? ''}`.trim()}>{children}</span>;
 };

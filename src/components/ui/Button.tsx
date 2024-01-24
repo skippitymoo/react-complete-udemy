@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import React, { FC } from 'react';
 
 type ButtonProps = React.ComponentPropsWithoutRef<'button'> & {
   /**
@@ -18,12 +18,19 @@ type ButtonNotificationProps = {
   text: string;
 };
 
-const ButtonComponent = ({
+/**
+ * A compound component representing a MealItem.
+ */
+interface ButtonComponent extends FC<ButtonProps> {
+  Notification: FC<ButtonNotificationProps>;
+}
+
+const ButtonRoot: ButtonComponent = ({
   children,
   variant = 'primary',
   size = 'normal',
   ...rest
-}: ButtonProps): JSX.Element => {
+}) => {
   const sizeClass = size === 'normal' ? '' : `btn--${size}`;
 
   return (
@@ -33,9 +40,9 @@ const ButtonComponent = ({
   );
 };
 
-const buttonNotification = ({ text }: ButtonNotificationProps): JSX.Element => (
+const buttonNotification: FC<ButtonNotificationProps> = ({ text }) => (
   <span className={'btn__notification'}>{text}</span>
 );
-ButtonComponent.Notification = buttonNotification;
+ButtonRoot.Notification = buttonNotification;
 
-export const Button = ButtonComponent;
+export const Button = ButtonRoot;

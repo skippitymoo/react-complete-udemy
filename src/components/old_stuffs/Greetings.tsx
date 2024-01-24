@@ -1,6 +1,6 @@
-import { useState, JSX } from 'react';
+import { FC, useState } from 'react';
 
-const Greetings = (): JSX.Element => {
+const Greetings: FC = () => {
   const [greetingText, setGreetingText] = useState<string>("It's good to see you");
 
   const clickHandler = (): void => {

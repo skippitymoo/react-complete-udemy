@@ -1,4 +1,4 @@
-import React, { JSX, forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 export type DialogProps = {
@@ -19,7 +19,7 @@ export type DialogRef = {
 const Dialog = forwardRef<DialogRef, DialogProps>(function CustomDialog(
   { initShowModal = false, children, className, ...rest },
   ref,
-): JSX.Element {
+) {
   const dialog = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {

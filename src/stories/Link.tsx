@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { FC } from 'react';
 
 interface LinkProps {
   /**
@@ -19,7 +19,7 @@ interface LinkProps {
   onClick?: () => void;
 }
 
-export const Link = ({ text, href = '#', target = '_self', ...props }: LinkProps): JSX.Element => {
+export const Link: FC<LinkProps> = ({ text, href = '#', target = '_self', ...props }) => {
   return (
     <a href={href} target={target} {...props}>
       {text}

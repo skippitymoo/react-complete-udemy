@@ -1,4 +1,4 @@
-import React, { JSX, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { formatCurrency } from '../../utils/utilities';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
@@ -13,11 +13,19 @@ export type AddToBasket = {
   onAddToBasket: (numberOfItems: number) => void;
 };
 
-const MealItemComponent = ({ children }: React.ComponentPropsWithoutRef<'div'>): JSX.Element => {
+/**
+ * A compound component representing a MealItem.
+ */
+interface MealItemComponent extends FC<React.ComponentPropsWithoutRef<'div'>> {
+  Details: FC<Omit<Meal, 'id'>>;
+  AddToBasket: FC<AddToBasket>;
+}
+
+const MealItemRoot: MealItemComponent = ({ children }) => {
   return <div className='meal-item'>{children}</div>;
 };
 
-const MealItemDetails = ({ name, description, price }: Omit<Meal, 'id'>): JSX.Element => {
+const MealItemDetails: FC<Omit<Meal, 'id'>> = ({ name, description, price }) => {
   return (
     <div className='meal-item__details'>
       <h3 className='meal-item__title'>{name}</h3>
@@ -27,7 +35,7 @@ const MealItemDetails = ({ name, description, price }: Omit<Meal, 'id'>): JSX.El
   );
 };
 
-const MealItemAddToBasket = ({ onAddToBasket }: AddToBasket): JSX.Element => {
+const MealItemAddToBasket: FC<AddToBasket> = ({ onAddToBasket }: AddToBasket) => {
   const [enteredAmount, setEnteredAmount] = useState(DEFAULT_ADD_TO_BASKET_AMOUNT);
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>): void => {
@@ -48,7 +56,7 @@ const MealItemAddToBasket = ({ onAddToBasket }: AddToBasket): JSX.Element => {
   );
 };
 
-MealItemComponent.Details = MealItemDetails;
-MealItemComponent.AddToBasket = MealItemAddToBasket;
+MealItemRoot.Details = MealItemDetails;
+MealItemRoot.AddToBasket = MealItemAddToBasket;
 
-export const MealItem = MealItemComponent;
+export const MealItem = MealItemRoot;

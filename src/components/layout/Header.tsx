@@ -1,7 +1,7 @@
-import { JSX } from 'react';
+import { FC } from 'react';
 import { HeaderCartButton } from './HeaderCartButton';
 
-export const Header = (): JSX.Element => {
+export const Header: FC = () => {
   return (
     <header className='header'>
       <h1 className='header__title'>ReactMeals</h1>

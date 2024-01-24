@@ -1,14 +1,14 @@
-import { JSX } from 'react';
+import { FC } from 'react';
 import { Chip } from '../ui/Chip';
 import { Button } from '../ui/Button';
 import { CartItemActions, CartItem as CartItemType } from '../menu.types';
 import { formatCurrency } from '../../utils/utilities';
 
-export const CartItem = ({
+export const CartItem: FC<CartItemType & CartItemActions> = ({
   amount,
   meal,
   onAmountChange,
-}: CartItemType & CartItemActions): JSX.Element => {
+}) => {
   const clickHandler = (id: string, changeBy: number): void => {
     onAmountChange(id, changeBy);
   };

@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { FC } from 'react';
 import mealBgImage from '../../img/meals.jpg';
 import { Meal } from '../menu.types';
 
@@ -32,7 +32,7 @@ const DUMMY_MEALS: Meal[] = [
   },
 ];
 
-export const MainContent = (): JSX.Element => {
+export const MainContent: FC = () => {
   return (
     <main className='main-container'>
       <div className='bg-image'>

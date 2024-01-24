@@ -1,7 +1,7 @@
-import { JSX } from 'react';
+import { FC } from 'react';
 import './sass/main.scss';
 
-const App = (): JSX.Element => {
+const App: FC = () => {
   return (
     <div>
       <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>

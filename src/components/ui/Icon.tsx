@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import React, { FC } from 'react';
 
 type IconProps = React.ComponentPropsWithoutRef<'svg'> & {
   /**
@@ -11,13 +11,13 @@ type IconProps = React.ComponentPropsWithoutRef<'svg'> & {
   decorative?: boolean;
 };
 
-export const Icon = ({
+export const Icon: FC<IconProps> = ({
   href,
   className,
   accessibleName,
   decorative = false,
   ...rest
-}: IconProps): JSX.Element => {
+}) => {
   return (
     <svg
       {...rest}

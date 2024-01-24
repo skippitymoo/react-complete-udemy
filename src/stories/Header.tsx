@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import React, { FC } from 'react';
 import { Button } from './Button';
 import './header.css';
 
@@ -13,7 +13,7 @@ interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps): JSX.Element => (
+export const Header: FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
     <div className='storybook-header'>
       <div>

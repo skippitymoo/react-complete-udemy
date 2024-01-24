@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { FC } from 'react';
 import { Button } from '../ui/Button';
 import { Icon } from '../ui/Icon';
 import sprite from '../../img/sprite.svg';
@@ -14,7 +14,7 @@ type HeaderCartButtonProps = {
   itemCount: number;
 };
 
-export const HeaderCartButton = ({ text, itemCount }: HeaderCartButtonProps): JSX.Element => {
+export const HeaderCartButton: FC<HeaderCartButtonProps> = ({ text, itemCount }: HeaderCartButtonProps) => {
   return (
     <Button variant='dark'>
       <Icon href={`${sprite}#icon-cart`} className='header-cart-button__icon' decorative={true} />

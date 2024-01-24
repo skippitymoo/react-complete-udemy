@@ -1,4 +1,4 @@
-import { JSX, useRef } from 'react';
+import { FC, useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Cart } from './Cart';
 import { DialogRef } from '../ui/Dialog';
@@ -14,7 +14,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const CartModalWithButtonTemplate = (props: CartProps): JSX.Element => {
+const CartModalWithButtonTemplate: FC<CartProps> = (props: CartProps) => {
   const refDialog = useRef<DialogRef>(null);
   const clickHandler = (): void => {
     refDialog.current?.open();

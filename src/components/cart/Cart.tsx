@@ -1,4 +1,4 @@
-import { JSX, forwardRef, useImperativeHandle, useRef, useState } from 'react';
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import { CartItem as CartItemType, CartProps } from '../menu.types';
 import { CartItem } from './CartItem';
 import { formatCurrency } from '../../utils/utilities';
@@ -10,7 +10,7 @@ type ClickType = 'close' | 'order';
 export const Cart = forwardRef<DialogRef, CartProps>(function CartModal(
   { initialCartItems, onCartChange, onOrder },
   ref,
-): JSX.Element {
+) {
   const [cart, setCart] = useState(initialCartItems);
   const dialogRef = useRef<DialogRef>(null);
 

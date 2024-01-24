@@ -1,4 +1,4 @@
-import { JSX, useRef } from 'react';
+import { FC, useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Dialog, DialogProps, DialogRef } from './Dialog';
 
@@ -16,7 +16,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const DialogWithButtonTemplate = ({ children, ...rest }: DialogProps): JSX.Element => {
+const DialogWithButtonTemplate: FC<DialogProps> = ({ children, ...rest }) => {
   const refDialog = useRef<DialogRef>(null);
   const clickHandler = (): void => {
     refDialog.current?.open();

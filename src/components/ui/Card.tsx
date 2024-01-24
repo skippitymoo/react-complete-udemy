@@ -1,8 +1,5 @@
-import React, { JSX } from 'react';
+import React, { FC } from 'react';
 
-export const Card = ({
-  className,
-  children,
-}: React.ComponentPropsWithoutRef<'div'>): JSX.Element => {
+export const Card: FC<React.ComponentPropsWithoutRef<'div'>> = ({ className, children }) => {
   return <div className={`card ${className ?? ''}`.trim()}>{children}</div>;
 };

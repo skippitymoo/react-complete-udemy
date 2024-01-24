@@ -1,4 +1,4 @@
-import React, { JSX, useId } from 'react';
+import React, { FC, useId } from 'react';
 
 type InputProps = React.ComponentPropsWithoutRef<'input'> & {
   /**
@@ -7,7 +7,7 @@ type InputProps = React.ComponentPropsWithoutRef<'input'> & {
   label: string;
 };
 
-export const Input = ({ label, className, ...rest }: InputProps): JSX.Element => {
+export const Input: FC<InputProps> = ({ label, className, ...rest }) => {
   const id = useId();
 
   return (
