@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import { CartItem } from './CartItem';
-import { Meal } from '../menu.types';
+import { Meal } from '../../shared/types/menu.types';
 
 expect.extend(toHaveNoViolations);
 

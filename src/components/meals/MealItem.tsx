@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { formatCurrency } from '../../utils/utilities';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
-import { Meal } from '../menu.types';
+import { Meal } from '../../shared/types/menu.types';
 
 const DEFAULT_ADD_TO_BASKET_AMOUNT = 1;
 
@@ -38,7 +38,7 @@ const MealItemDetails: FC<Omit<Meal, 'id'>> = ({ name, description, price }) => 
 const MealItemAddToBasket: FC<AddToBasket> = ({ onAddToBasket }: AddToBasket) => {
   const [enteredAmount, setEnteredAmount] = useState(DEFAULT_ADD_TO_BASKET_AMOUNT);
 
-  const submitHandler = (event: React.FormEvent<HTMLFormElement>): void => {
+  const submitHandler = (event: React.FormEvent): void => {
     event.preventDefault();
 
     onAddToBasket(enteredAmount);

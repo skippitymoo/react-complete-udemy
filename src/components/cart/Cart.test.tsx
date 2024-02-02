@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import React from 'react';
 import { Cart } from './Cart';
-import { CartItem } from '../menu.types';
+import { CartItem } from '../../shared/types/menu.types';
 import { setUpModalContainer } from '../../utils/testUtils';
 import { DialogRef } from '../ui/Dialog';
 

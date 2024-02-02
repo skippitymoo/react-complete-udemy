@@ -2,7 +2,7 @@ import { FC, useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Cart } from './Cart';
 import { DialogRef } from '../ui/Dialog';
-import { CartProps } from '../menu.types';
+import { CartProps } from '../../shared/types/menu.types';
 
 const meta: Meta<typeof Cart> = {
   title: 'Cart/Cart',

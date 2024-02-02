@@ -1,44 +1,36 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import mealBgImage from '../../img/meals.jpg';
-import { Meal } from '../menu.types';
-
-// TODO: serve meal items via an API
-// this will be passed to the MealsAvailable component
-// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
-const DUMMY_MEALS: Meal[] = [
-  {
-    id: 'm1',
-    name: 'Sushi',
-    description: 'Finest fish and veggies',
-    price: 22.99,
-  },
-  {
-    id: 'm2',
-    name: 'Schnitzel',
-    description: 'A german specialty!',
-    price: 16.5,
-  },
-  {
-    id: 'm3',
-    name: 'Barbecue Burger',
-    description: 'American, raw, meaty',
-    price: 12.99,
-  },
-  {
-    id: 'm4',
-    name: 'Green Bowl',
-    description: 'Healthy...and green...',
-    price: 18.99,
-  },
-];
+import { Meal } from '../../shared/types/menu.types';
+import { MealsAvailable } from '../meals/MealsAvailable';
+import { fetchMeals } from '../../shared/services/meals';
 
 export const MainContent: FC = () => {
+  const [meals, setMeals] = useState<Meal[]>([]);
+  const [mealsError, setMealsError] = useState<boolean>(false);
+
+  const getMeals = async (): Promise<void> => {
+    try {
+      const allMeals = await fetchMeals();
+      setMeals(allMeals);
+    } catch (error) {
+      console.error('[MainContent] - problem getting meal menu');
+      setMealsError(true);
+    }
+  };
+
+  useEffect(() => {
+    getMeals();
+  }, []);
+
   return (
     <main className='main-container'>
       <div className='bg-image'>
         <img src={mealBgImage} alt='' className='bg-image__image' />
       </div>
-      <div className='content'></div>
+      <div className='content'>
+        {mealsError && <div>Error!!!!</div>}
+        <MealsAvailable availableMeals={meals} />
+      </div>
     </main>
   );
 };

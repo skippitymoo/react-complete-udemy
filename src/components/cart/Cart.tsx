@@ -1,5 +1,5 @@
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
-import { CartItem as CartItemType, CartProps } from '../menu.types';
+import { CartItem as CartItemType, CartProps } from '../../shared/types/menu.types';
 import { CartItem } from './CartItem';
 import { formatCurrency } from '../../utils/utilities';
 import { Button } from '../ui/Button';
@@ -49,7 +49,7 @@ export const Cart = forwardRef<DialogRef, CartProps>(function CartModal(
       ref={dialogRef!}
       aria-labelledby='Cart Summary'
       aria-describedby='Adjust items in your cart and order when ready'
-      onClose={() => actionHandler('close')}
+      onClose={actionHandler.bind(null, 'close')}
     >
       <section className='cart'>
         <ul>
@@ -68,10 +68,10 @@ export const Cart = forwardRef<DialogRef, CartProps>(function CartModal(
           <span>{formatCurrency(totalPrice)}</span>
         </div>
         <div className='cart__actions'>
-          <Button variant='light' onClick={() => actionHandler('close')}>
+          <Button variant='light' onClick={actionHandler.bind(null, 'close')}>
             Close
           </Button>
-          <Button onClick={() => actionHandler('order')}>Order</Button>
+          <Button onClick={actionHandler.bind(null, 'order')}>Order</Button>
         </div>
       </section>
     </Dialog>

@@ -1,14 +1,10 @@
 import { FC } from 'react';
 import { Chip } from '../ui/Chip';
 import { Button } from '../ui/Button';
-import { CartItemActions, CartItem as CartItemType } from '../menu.types';
+import { CartItemActions, CartItem as CartItemType } from '../../shared/types/menu.types';
 import { formatCurrency } from '../../utils/utilities';
 
-export const CartItem: FC<CartItemType & CartItemActions> = ({
-  amount,
-  meal,
-  onAmountChange,
-}) => {
+export const CartItem: FC<CartItemType & CartItemActions> = ({ amount, meal, onAmountChange }) => {
   const clickHandler = (id: string, changeBy: number): void => {
     onAmountChange(id, changeBy);
   };
@@ -21,10 +17,10 @@ export const CartItem: FC<CartItemType & CartItemActions> = ({
         <Chip className='cart-item__amount'>{`x ${amount}`}</Chip>
       </div>
       <div className='cart-item__actions'>
-        <Button size='small' variant='light' onClick={() => clickHandler(meal.id, -1)}>
+        <Button size='small' variant='light' onClick={clickHandler.bind(null, meal.id, -1)}>
           &minus;
         </Button>
-        <Button size='small' variant='light' onClick={() => clickHandler(meal.id, 1)}>
+        <Button size='small' variant='light' onClick={clickHandler.bind(null, meal.id, 1)}>
           +
         </Button>
       </div>

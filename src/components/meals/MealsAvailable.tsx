@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Meal, MealsAvailable as MealsAvailableType } from '../menu.types';
+import { Meal, MealsAvailable as MealsAvailableType } from '../../shared/types/menu.types';
 import { MealItem } from './MealItem';
 
 export const MealsAvailable: FC<MealsAvailableType> = ({ availableMeals }) => {
