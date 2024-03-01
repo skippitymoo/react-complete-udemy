@@ -1,15 +1,19 @@
 import { render, screen } from '@testing-library/react';
-import { MainContent } from './MainContent';
 import { axe, toHaveNoViolations } from 'jest-axe';
-import { server } from '../../shared/mocks/msw/server';
+import { MainContent } from './MainContent';
+import { mockedMealsList } from '../../shared/mocks/mealsData';
 
 expect.extend(toHaveNoViolations);
 
-describe('MainContent', () => {
-  beforeAll(() => server.listen());
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
+jest.mock('../../shared/services/meals', () => {
+  return {
+    fetchMeals: async () => {
+      return await Promise.resolve(mockedMealsList);
+    },
+  };
+});
 
+describe('MainContent', () => {
   it('has no accessibility violations', async () => {
     const { container } = render(<MainContent />);
 

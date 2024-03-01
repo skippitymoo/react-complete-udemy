@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true,
     "jest": true, // Add this line!
-    "jest/globals": true,
+    "jest/globals": true
   },
   "extends": [
     "react-app",
@@ -13,32 +13,30 @@
     "plugin:mdx/recommended",
     // "plugin:@typescript-eslint/recommended",
     // "standard-with-typescript"
-    "plugin:jest/recommended",
-    "plugin:jest/style",
     "prettier",
-    "plugin:jsx-a11y/strict",
+    "plugin:jsx-a11y/strict"
   ],
   "overrides": [
     {
       "files": ["*.test.ts", "*.test.tsx"],
       "plugins": ["jest"],
       "env": {
-        "jest/globals": true,
+        "jest/globals": true
       },
       "extends": ["plugin:jest/recommended"],
-      "rules": { "jest/prefer-expect-assertions": "off" },
-    },
+      "rules": { "jest/prefer-expect-assertions": "off" }
+    }
   ],
   // "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true,
+      "jsx": true
     },
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig.json",
+    "project": "./tsconfig.json"
   },
-  "plugins": ["react", "prettier", "jsx-a11y", "jest"], // "@typescript-eslint"],
+  "plugins": ["react", "prettier", "jsx-a11y"], // "@typescript-eslint"],
   "root": true,
   "rules": {
     "react/react-in-jsx-scope": "off",
@@ -57,8 +55,8 @@
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
-        "allowExpressions": true,
-      },
+        "allowExpressions": true
+      }
     ],
     "testing-library/no-node-access": ["error", { "allowContainerFirstChild": true }],
     "jest/no-disabled-tests": "warn",
@@ -66,12 +64,12 @@
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
-    "indent": ["error", 2],
+    "indent": ["error", 2]
   },
   "settings": {
     "import/resolver": {
-      "typescript": {},
+      "typescript": {}
     },
-    "mdx/code-blocks": true,
-  },
+    "mdx/code-blocks": true
+  }
 }

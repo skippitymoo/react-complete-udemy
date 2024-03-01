@@ -11,13 +11,4 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  decorators: [
-    (Story) => (
-      <div style={{ minHeight: '100vh', display: 'flex' }}>
-        {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
-        <Story />
-      </div>
-    ),
-  ],
-};
+export const Default: Story = {};

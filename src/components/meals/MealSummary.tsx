@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { JSX } from 'react';
 
-export const MealSummary: FC = () => {
+export const MealSummary = (): JSX.Element => {
   return (
     <section className='meal-summary'>
       <h2 className='meal-summary__title'>Delicious Food, Delivered To You</h2>

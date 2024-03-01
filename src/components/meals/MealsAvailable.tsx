@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { JSX } from 'react';
 import { Meal, MealsAvailable as MealsAvailableType } from '../../shared/types/menu.types';
 import { MealItem } from './MealItem';
 
-export const MealsAvailable: FC<MealsAvailableType> = ({ availableMeals }) => {
+export const MealsAvailable = ({ availableMeals }: MealsAvailableType): JSX.Element => {
   return (
     <section className='meals-available'>
       <ul>

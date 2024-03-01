@@ -1,8 +1,6 @@
 .main-container {
   position: relative;
   background-color: var(--colour-grey-dark-2);
-
-  flex: 1;
 }
 
 .bg-image {
@@ -19,5 +17,20 @@
     height: 100%;
     object-fit: cover;
     transform: rotateZ(-5deg) translateX(-17px);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 10dvh;
+
+  & > * {
+    z-index: 1;
+
+    margin-bottom: 2rem;
   }
 }

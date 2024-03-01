@@ -37,7 +37,9 @@ exports[`Dialog should render 1`] = `
     class="dialog random-class"
     open=""
   >
-    <div>
+    <div
+      data-testid="my-text"
+    >
       yeooo !
     </div>
   </dialog>

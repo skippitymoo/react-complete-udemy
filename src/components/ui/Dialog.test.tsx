@@ -23,7 +23,7 @@ describe('Dialog', () => {
 
     const { container } = render(
       <Dialog ref={dialogRef} className='random-class'>
-        <div>yeooo !</div>
+        <div data-testid='my-text'>yeooo !</div>
       </Dialog>,
       { container: modalContainer },
     );
@@ -33,7 +33,7 @@ describe('Dialog', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText(/yeooo !/i)).toBeVisible();
+      expect(screen.getByTestId('my-text')).toHaveTextContent('yeooo !');
     });
 
     expect(container).toMatchSnapshot();

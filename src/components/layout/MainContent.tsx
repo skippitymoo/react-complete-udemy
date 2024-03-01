@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import mealBgImage from '../../img/meals.jpg';
 import { Meal } from '../../shared/types/menu.types';
 import { MealsAvailable } from '../meals/MealsAvailable';
+import { MealSummary } from '../meals/MealSummary';
 import { fetchMeals } from '../../shared/services/meals';
 
 export const MainContent: FC = () => {
@@ -29,6 +30,7 @@ export const MainContent: FC = () => {
       </div>
       <div className='content'>
         {mealsError && <div>Error!!!!</div>}
+        <MealSummary />
         <MealsAvailable availableMeals={meals} />
       </div>
     </main>
